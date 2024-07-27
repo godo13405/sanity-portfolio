@@ -1,17 +1,11 @@
-import urlBuilder from "@sanity/image-url";
-import { getImageDimensions } from "@sanity/asset-utils";
-
 const portableTextImage = {
   types: {
     image: ({ value, isInline }) => {
-      return <img
-        src={urlBuilder()
-          .image(value)
-          .width(isInline ? 100 : 800)
-          .fit("max")
-          .auto("format")
-          .url()}
-      />
+      return (
+        <img
+          src={`https://cdn.sanity.io/images/${process.env.PROJECT_ID}/${process.env.DATASET}/${value.asset._ref.replace(/^([^\-]*)-/gm, '').replace(/-([^\-]*)$/gm, ".$1")}?w=800&fit=max&auto=format`}
+        />
+      );
         },
   },
 };
