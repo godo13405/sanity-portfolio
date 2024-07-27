@@ -1,19 +1,19 @@
-import SanityClient from "next-sanity-client";
+"use server";
 
-const sanityFetch = async ({ query = `[_type == 'project']` }) => {
-  const client = new SanityClient({
-    projectId: process.env.PROCESS_ID,
-    dataset: process.env.NODE_ENV || "production",
-    useCdn: process.env.NODE_ENV === "production",
+import { createClient } from "@sanity/client";
+
+const sanityFetch = async ({ query }) => {
+  const client = createClient({
+    projectId: process.env.PROJECT_ID,
+    dataset: process.env.DATASET || "production",
+    useCdn: true, // set to `false` to bypass the edge cache
+    apiVersion: "2023-05-03", // use current date (YYYY-MM-DD) to target the latest API version
+    // token: process.env.SANITY_SECRET_TOKEN // Only if you want to update content with the client
   });
 
-  return await client.fetch({
-    query,
-    config: {
-      cache: "force-cache",
-      next: { revalidate: 60 },
-    },
-  });
+  const response = await client.fetch(query);
+
+  return response;
 };
 
 export default sanityFetch;

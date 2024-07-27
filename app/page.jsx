@@ -1,8 +1,9 @@
+"use server";
 import TileGrid from "../component/TileGrid/TileGrid";
 import sanityFetch from "./utils/sanityFetch";
 
 const Home = () => {
-    return <TileGrid q={`[_type == 'project']`} />
-}
+  return sanityFetch({ query: `*[_type == 'project']` }).then((data) => <TileGrid data={data} />);
+};
 
 export default Home;

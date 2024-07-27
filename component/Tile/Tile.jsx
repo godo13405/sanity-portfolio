@@ -1,10 +1,15 @@
+"use client";
+
+import Link from "next/link";
 import style from "./style.module.scss";
 
-const Tile = () => {
+const Tile = ({data}) => {
   return (
-    <div className={style.TileContainer}>
-      <Tile />
-    </div>
+    <Link href={`/project/${data.slug.current}`} className={style.TileContainer}>
+      <div className={style.textContainer}>
+        <h2>{data.name}</h2>
+      </div>
+    </Link>
   );
 };
 
