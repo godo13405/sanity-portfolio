@@ -7,7 +7,7 @@ import Hero from "../component/Hero/Hero";
 const Home = () => {
   return <main>
     <Hero />
-    <div class="contained">
+    <div className="contained">
       {sanityFetch({ query: `*[_type == 'project']` }).then((data) => <TileGrid data={data} />)}
     </div>
     </main>

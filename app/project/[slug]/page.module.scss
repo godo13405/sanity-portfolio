@@ -1,7 +1,19 @@
 @import "../../../styles/vars";
 
 .projectContainer {
-    width: 100%;
-    max-width: $width-max;
-    margin: 2em auto;
+    .hero {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 35vh;
+        margin-bottom: -10vh;
+    }
+    .projectContainerInner {
+        background-color: #fff;
+        padding: $padding-body;
+
+        img {
+            width: 100%;
+        }
+    }
 }
