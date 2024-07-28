@@ -1,4 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Nav from "../component/Nav/Nav"
 
 export const metadata = {
   title: 'Next.js',
@@ -8,7 +9,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Nav />
+        <div style={{paddingTop: "3rem"}}>
+        {children}
+        </div>
+      </body>
     </html>
   )
 }

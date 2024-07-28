@@ -13,12 +13,13 @@ const Project = async ({ params }) => {
   "imageUrl": image.asset->url,
   "slug": slug.current,
   tools[]->,
+  tags[]->,
   relatedProjects[]->
 }` });
 const data = dataArr[0];
 
   return <article className={style.projectContainer}>
-    <div className={style.hero} style={{backgroundImage:`url(${data.imageUrl})`,backgroundColor: `${data.color || 'grey'}`}}></div>
+    <div className={style.hero} style={{backgroundImage:`url(${data.imageUrl})`,backgroundColor: `${data.color.hex || 'grey'}`}}></div>
     <div className={`${style.projectContainerInner} contained`}>
       <h1>{data.name}</h1>
       <PortableText
