@@ -5,8 +5,8 @@ import style from "./style.module.scss";
 
 const TileGrid = ({data}) => {
     return <div className={style.TileGridContainer}>
-        {data.length && data.map((dat, k) => <Tile key={k} data={dat} />)}
-        {!data.length && <p>Loading</p>}
+        {data && data.length && data.map((dat, k) => <Tile key={k} data={dat} />)}
+        {!data || !data.length && <p>Loading</p>}
     </div>
 }
 

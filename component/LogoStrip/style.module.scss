@@ -1,0 +1,14 @@
+.logoStripContainer {
+    .inner {
+        display: flex;
+        flex-direction: row;
+        height: 4rem;
+        align-content: space-between;
+        width: 100%;
+    }
+
+    a,
+    img {
+        height: 100%;
+    }
+}
