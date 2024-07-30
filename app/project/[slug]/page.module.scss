@@ -2,26 +2,40 @@
 
 .projectContainer {
     .hero {
-        background-position: center;
-        background-repeat: no-repeat;
-        // background-size: 100%;
-        height: 35vh;
+        height: 50vmin;
+        min-height: 20vh;
         margin-bottom: -10vh;
+        display: flex;
+        justify-items: center;
+
+        .inner {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
     }
+
     .projectContainerInner {
         background-color: rgba(#fff, .8);
         backdrop-filter: blur(1em);
         border-radius: 1em;
         border-top: 1px solid #fff;
         padding: $padding-body;
+
         @media all and (max-width: $width-max) {
             padding: $padding-body/2;
         }
+
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             &:first-child {
                 margin-top: 0;
             }
@@ -37,12 +51,15 @@
             border-radius: 1em;
             vertical-align: text-top;
             width: 95%;
+
             @media all and (min-width: $width-max) {
                 width: 45%;
             }
+
             margin: 1em 2.5%;
         }
-        :not(img) + img:has(+ :not(img)) {
+
+        :not(img)+img:has(+ :not(img)) {
             width: 95%;
         }
     }
