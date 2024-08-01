@@ -22,9 +22,19 @@ const Project = async ({ params }) => {
     "Slug": Slug.current,
     "imageUrl": image.asset->url
   },
-  relatedProjects[]->,
-  Body,
-  name
+  "relatedProjects": relatedProjects[]->{
+    "imageUrl": image.asset->url,
+    "slug": slug.current,
+    name
+  },
+  name,
+  "body": Body[]{
+    ...,
+    "asset": asset->{
+      url,
+      altText
+    },
+  }
 }` });
 const data = dataArr[0];
 
@@ -35,7 +45,7 @@ const data = dataArr[0];
     <div className={`${style.projectContainerInner} contained`}>
       <h1>{data.name}</h1>
       <PortableText
-        value={data.Body}
+        value={data.body}
         components={portableTextImage}
       />
       <h2>You might also like</h2>
