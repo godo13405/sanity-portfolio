@@ -9,17 +9,27 @@ import TileGrid from "../../../component/TileGrid/TileGrid";
 const Project = async ({ params }) => {
   const dataArr = await sanityFetch({
     query: `*[_type == 'project' && slug.current == '${params.slug}'] {
-  ...,
+  "color": color.hex,
   "imageUrl": image.asset->url,
   "slug": slug.current,
-  tools[]->,
-  tags[]->,
-  relatedProjects[]->
+  tools[]->{
+    Name,
+    "Slug": Slug.current,
+    "imageUrl": image.asset->url
+  },
+  tags[]->{
+    Name,
+    "Slug": Slug.current,
+    "imageUrl": image.asset->url
+  },
+  relatedProjects[]->,
+  Body,
+  name
 }` });
 const data = dataArr[0];
 
   return <article className={style.projectContainer}>
-    <div className={style.hero} style={{backgroundColor: `${data.color ? data.color.hex : 'grey'}`}}>
+    <div className={style.hero} style={{backgroundColor: `${data.color || 'grey'}`}}>
     <img className={`${style.inner} contained`} src={data.imageUrl} />
     </div>
     <div className={`${style.projectContainerInner} contained`}>

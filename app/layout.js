@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
         <div style={{paddingTop: "3rem"}}>
         {children}
         </div>
+        <SpeedInsights />
       </body>
     </html>
   )

@@ -5,7 +5,7 @@ import style from "./style.module.scss";
 
 const Tile = ({data}) => {
   return (
-    <Link href={`/project/${data.slug.current}`} className={style.TileContainer}>
+    <Link href={`/project/${data.slug}`} className={style.TileContainer}>
       <div className={style.textContainer}>
         <h2>{data.name}</h2>
       </div>

@@ -10,9 +10,15 @@ const Home = () => {
     <Hero />
     <LogoStrip />
     <div className="contained">
-      {sanityFetch({ query: `*[_type == 'project']` }).then((data) => <TileGrid data={data} />)}
+      {sanityFetch({
+        query: `*[_type == 'project' && featured == true]|order(date asc){
+  "color": color.hex,
+  "imageUrl": image.asset->url,
+  "slug": slug.current,
+  name
+}` }).then((data) => <TileGrid data={data} />)}
     </div>
-    </main>
+  </main>
 };
 
 export default Home;
