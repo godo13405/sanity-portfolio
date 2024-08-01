@@ -32,7 +32,8 @@ const Project = async ({ params }) => {
     ...,
     "asset": asset->{
       url,
-      altText
+      altText,
+      title
     },
   }
 }` });
