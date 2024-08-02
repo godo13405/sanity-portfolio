@@ -33,7 +33,8 @@ const Project = async ({ params }) => {
     "asset": asset->{
       url,
       altText,
-      title
+      title,
+      "hasTransparency": metadata.hasAlpha
     },
   }
 }` });

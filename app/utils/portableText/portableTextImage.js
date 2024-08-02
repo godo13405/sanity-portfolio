@@ -1,9 +1,13 @@
+import style from "./style.module.scss"
+
 const portableTextImage = {
   types: {
     image: ({ value, isInline }) => {
+      console.log(value)
       return (
-        <figure>
+        <figure className={style.figure}>
           <img
+          className={`${value.asset.hasTransparency ? style.transparent : ''}`}
           src={`${value.asset.url}?w=800&fit=max&auto=format`}
           alt={value.asset.altText}
         />
