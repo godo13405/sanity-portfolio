@@ -1,5 +1,4 @@
 @import "./vars";
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 *,
 *::before,
@@ -17,10 +16,10 @@ body {
   padding: 0;
 
   font-size: $font-size;
-  font-family: "Lato", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  line-height: 1.2em;
 }
 
 h1,
@@ -29,8 +28,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", sans-serif;
   font-weight: 700;
+  line-height: 1em;
   font-style: normal;
   margin: .7em 0 0;
 }

@@ -34,6 +34,7 @@ const Project = async ({ params }) => {
       url,
       altText,
       title,
+      "tags": opt.media.tags[]->name.current,
       "hasTransparency": metadata.hasAlpha
     },
   }

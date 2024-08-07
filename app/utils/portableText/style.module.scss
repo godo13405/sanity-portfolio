@@ -7,13 +7,17 @@
     overflow: visible;
 
     img {
+        &.padding {
+            padding: 1rem;
+            background: $colo-background;
+        }
         &.transparent {
             filter: drop-shadow(0 .4rem 1.2rem rgba(#111, .4));
         }
         &:not(.transparent) {
             box-shadow: 0 .2em 1em rgba(#111, .4);
+            border-radius: 1em;
         }
-        border-radius: 1em;
     }
 
     caption {
