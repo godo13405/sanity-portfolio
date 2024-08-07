@@ -5,8 +5,21 @@ const Hero = () => {
     return <div className={style.heroContainer}>
         <div className={`${style.heroInner} contained`}>
             <div className={style.textContainer}>
-                <h1>Goncalo <br />S. Andrade</h1>
-                <p>Product Designer <br /> Problem Solver <br /> Teacher & Mentor</p>
+                <div>
+                    <h1>Goncalo <br />S. Andrade</h1>
+                    <p>Product Designer <br /> Problem Solver <br /> Teacher & Mentor</p>
+                </div>
+
+                <div className={style.countersContainer}>
+                    <div>
+                        <h2>14+</h2>
+                        <p>years of experience</p>
+                    </div>
+                    <div>
+                        <h2>100+</h2>
+                        <p>Students & Mentees helped</p>
+                    </div>
+                </div>
             </div>
             <div className={style.pictureContainer}>
                     <div className={style.picture} style={{backgroundImage: 'url(/img/me.png)'}} />
