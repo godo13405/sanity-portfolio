@@ -7,10 +7,10 @@ const Hero = () => {
             <div className={style.textContainer}>
                 <div>
                     <h1>Goncalo <br />S. Andrade</h1>
-                    <p>Product Designer <br /> Problem Solver <br /> Teacher & Mentor</p>
+                    <p className={style.hideMobile}>Product Designer <br /> Problem Solver <br /> Teacher & Mentor</p>
                 </div>
 
-                <div className={style.countersContainer}>
+                <div className={`${style.countersContainer} ${style.hideMobile}`}>
                     <div>
                         <h2>14+</h2>
                         <p>years of experience</p>

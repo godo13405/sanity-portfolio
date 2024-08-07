@@ -8,14 +8,20 @@
 
     .heroInner {
         height: 25rem;
+        gap: $gap;
         display: flex;
         flex-direction: row;
 
-        @media all and (max-width: $width-med) {
-            flex-direction: column;
+        @media all and (max-width: $width-max) {
+            padding: 1rem;
         }
 
-        gap: $gap;
+        @media all and (max-width: $width-med) {
+            flex-direction: column;
+            gap: $gap;
+            height: 80%;
+        }
+
         align-items: center;
 
         .IconButton {
@@ -29,8 +35,15 @@
 
         >* {
             position: relative;
-            flex: 1;
-            height: 100%;
+            @media all and (min-width: $width-med) {
+                flex: 1;
+                height: 100%;
+            }
+            width: 100%;
+
+            &.pictureContainer {
+                flex: 1;
+            }
         }
 
         .picture {
@@ -45,7 +58,7 @@
             mask-image: url('/mask/hero.svg'), url('/mask/hero-top-right.svg'), url('/mask/hero-bottom-left.svg');
             mask-position: center, top right, bottom left;
             mask-repeat: no-repeat, no-repeat, no-repeat;
-            mask-size: 100%, 101px*1.2, 240px*1.2 101px*1.2;
+            mask-size: 200%, 101px*1.2, 240px*1.2 101px*1.2;
             mask-composite: subtract;
         }
 
@@ -73,7 +86,7 @@
             flex-direction: column;
 
             h1 {
-                font-size: clamp(4rem, 10vmin, 10rem);
+                font-size: clamp(3.6rem, 10vmin, 10rem);
                 font-weight: 900;
                 margin-top: 0;
             }
@@ -83,8 +96,11 @@
 
     .textContainer {
         > :first-child {
-            flex:1;
+            @media all and (min-width: $width-med) {
+                flex: 1;
+            }
         }
+
         .countersContainer {
             display: flex;
             flex-direction: row;
@@ -96,6 +112,12 @@
                 margin: 0;
                 padding: 0;
             }
+        }
+    }
+
+    .hideMobile {
+        @media all and (max-width: $width-med) {
+            display: none !important;
         }
     }
 }
