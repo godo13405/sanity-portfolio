@@ -87,6 +87,7 @@
 
     .projectContainerInner {
         max-width: $width-med;
+        text-align: left;
         background-color: rgba($white, .8);
         backdrop-filter: blur(1em);
         border-radius: 1em;

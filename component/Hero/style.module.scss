@@ -33,6 +33,7 @@
         }
 
         >* {
+            text-align: left;
             position: relative;
             @media all and (min-width: $width-med) {
                 flex: 1;
