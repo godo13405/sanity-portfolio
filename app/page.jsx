@@ -4,6 +4,7 @@ import sanityFetch from "./utils/sanityFetch";
 import "../styles/global.scss";
 import Hero from "../component/Hero/Hero";
 import LogoStrip from "../component/LogoStrip/LogoStrip";
+import Link from "next/link";
 
 const Home = () => {
   return <main>
@@ -24,6 +25,7 @@ const Home = () => {
     "slug": Slug.current
   }
 }` }).then((data) => <TileGrid data={data} />)}
+      <Link href="/project">View all</Link>
       </div>
     </div>
   </main>

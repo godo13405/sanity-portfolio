@@ -59,6 +59,8 @@
         display: flex;
         flex-direction: column;
         gap: $gap/4;
+        padding-top: $gap;
+        background: linear-gradient(0deg, rgba($white,1) 50%, rgba($white,0) 100%);
         * {
             color: $palette-gunmetal;
             text-decoration: none;
@@ -68,6 +70,7 @@
     .tagsContainer {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: $gap/4;
     }
 }
