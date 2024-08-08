@@ -1,0 +1,15 @@
+@import "../../styles/vars";
+
+.tagContainer {
+    font-size: .7em;
+    border-radius: 1.4em;
+    padding: .4em .8em;
+    border: 1px solid $palette-gunmetal;
+    transition: all .2s ease-out;
+
+    &:hover {
+        background-color: rgba($palette-moonstone, .8);
+        border-color: rgba($palette-moonstone, 1);
+        color: $white !important;
+    }
+}

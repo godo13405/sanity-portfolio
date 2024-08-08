@@ -18,7 +18,11 @@ const Home = () => {
   "color": color.hex,
   "imageUrl": image.asset->url,
   "slug": slug.current,
-  name
+  name,
+  tags[]-> {
+    "name": Name,
+    "slug": Slug.current
+  }
 }` }).then((data) => <TileGrid data={data} />)}
       </div>
     </div>

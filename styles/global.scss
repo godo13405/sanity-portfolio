@@ -46,6 +46,10 @@ h3 {
   font-size: 2rem;
 }
 
+h3 {
+  font-size: 1.6rem;
+}
+
 .contained {
   width: 100%;
   max-width: $width-max;
@@ -76,6 +80,7 @@ h3 {
       height: $corner-radius;
       z-index: -1;
       background-color: $palette-cornsilk;
+      z-index: -1;
     }
 
     &.unwhite {

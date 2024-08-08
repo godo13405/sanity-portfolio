@@ -1,4 +1,73 @@
+@import "../../styles/vars";
+
 .TileContainer {
-    border-radius: 2em;
+    $corner-size: $corner-radius + $gap;
+
+    text-decoration: none;
+    position: relative;
+    border-radius: $corner-radius/2;
     overflow: hidden;
+    background-color: $white;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+    background-size: 30vmin;
+    padding: 1em;
+    padding-top: 25vmin;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: $corner-size;
+        height: $corner-size;
+        background: url('/mask/hero-top-right.svg') top right no-repeat;
+        transition: right .2s ease-in-out;
+    }
+
+    .iconButton {
+        background-color: $palette-coral;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: $gap*1.4;
+        width: $gap*1.4;
+        padding: .4em;
+        border-radius: 100%;
+        transition: all .2s ease-in;
+        z-index: 2;
+    }
+
+    &:hover {
+        .iconButton img {
+            mix-blend-mode: plus-lighter;
+        }
+    }
+
+    &:not(:hover) {
+        &:after {
+            right: -$corner-size;
+        }
+
+        .iconButton {
+            margin: $gap/4;
+            background-color: transparent;
+        }
+    }
+
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        gap: $gap/4;
+        * {
+            color: $palette-gunmetal;
+            text-decoration: none;
+        }
+    }
+
+    .tagsContainer {
+        display: flex;
+        flex-direction: row;
+        gap: $gap/4;
+    }
 }
