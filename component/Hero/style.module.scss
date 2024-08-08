@@ -3,8 +3,16 @@
 .heroContainer {
     height: 80vh;
     background-color: $palette-cornsilk;
-    border-radius: 0 0 $corner-radius $corner-radius;
-    align-content: center;
+    position: relative;
+    &:before {
+        content:"";
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        height: $nav-size;
+        background-color: $palette-cornsilk;
+    }
 
     .heroInner {
         height: 25rem;
@@ -58,8 +66,8 @@
             mask-image: url('/mask/hero.svg'), url('/mask/hero-top-right.svg'), url('/mask/hero-bottom-left.svg');
             mask-position: center, top right, bottom left;
             mask-repeat: no-repeat, no-repeat, no-repeat;
-            mask-size: 200%, 101px*1.2, 240px*1.2 101px*1.2;
-            mask-composite: subtract;
+            mask-size: 200%, 120px, auto 120px;
+            mask-composite: subtract, add;
         }
 
         .iconButtonGroup {
@@ -86,7 +94,10 @@
             flex-direction: column;
 
             h1 {
-                font-size: clamp(3.6rem, 10vmin, 10rem);
+                font-size: clamp(3rem, 8vmin, 10rem);
+                @media all and (min-width: $width-max) {
+                    font-size: clamp(3rem, 10vmin, 10rem);
+                }
                 font-weight: 900;
                 margin-top: 0;
             }

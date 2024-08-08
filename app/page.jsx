@@ -8,15 +8,19 @@ import LogoStrip from "../component/LogoStrip/LogoStrip";
 const Home = () => {
   return <main>
     <Hero />
-    <LogoStrip />
-    <div className="contained">
-      {sanityFetch({
-        query: `*[_type == 'project' && featured == true]|order(date asc){
+    <div className="section">
+      <LogoStrip />
+    </div>
+    <div className="section unwhite">
+      <div className="contained">
+        {sanityFetch({
+          query: `*[_type == 'project' && featured == true]|order(date asc){
   "color": color.hex,
   "imageUrl": image.asset->url,
   "slug": slug.current,
   name
 }` }).then((data) => <TileGrid data={data} />)}
+      </div>
     </div>
   </main>
 };

@@ -10,12 +10,11 @@ const LogoStrip = async () => {
   "slug": slug.current,
   "imageUrl": image.asset->url,
 }` });
-console.log(data)
 
-    return <div className={`${style.logoStripContainer} contained`}>
-        <h2>I've worked with some great teams</h2>
+    return <div className={`${style.logoStripContainer} contained section`}>
+        {/* <h3>I've worked with some great teams</h3> */}
         <div className={style.inner}>
-            {data.map((d, k) => <a key={k}><img src={`${d.imageUrl}?w=200&fit=max&auto=format`} /></a>)}
+            {data.map((d, k) => <a key={k} title={d.name}><img src={`${d.imageUrl}?h=60&fit=max`} /></a>)}
         </div>
     </div>
 

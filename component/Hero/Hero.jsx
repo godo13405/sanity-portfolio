@@ -2,7 +2,7 @@ import IconButton from "../IconButton/IconButton";
 import style from "./style.module.scss"
 
 const Hero = () => {
-    return <div className={style.heroContainer}>
+    return <div className={`${style.heroContainer} section unwhite`}>
         <div className={`${style.heroInner} contained`}>
             <div className={style.textContainer}>
                 <div>

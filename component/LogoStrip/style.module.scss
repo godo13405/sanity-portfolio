@@ -3,12 +3,21 @@
         display: flex;
         flex-direction: row;
         height: 4rem;
-        align-content: space-between;
+        justify-content: space-around;
+        align-items: center;
         width: 100%;
+        margin: 2em 0;
     }
 
     a,
     img {
         height: 100%;
+    }
+
+    img {
+        transition: filter .2s ease-in-out;
+        &:not(:hover){
+            filter: grayscale(1);
+        }
     }
 }
