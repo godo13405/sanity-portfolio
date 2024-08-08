@@ -51,6 +51,7 @@ h3 {
 }
 
 .contained {
+  position: relative;
   width: 100%;
   max-width: $width-max;
   margin-left: auto;
@@ -65,12 +66,28 @@ h3 {
   justify-content: center;
   position: relative;
   background-color: $white;
-  &.unwhite {
-    background-color: $palette-cornsilk;
+
+  &:first-child:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: $nav-size;
+    background-color: $white;
   }
-  
+
+  &.unwhite {
+
+    &,
+    &:before {
+      background-color: $palette-cornsilk;
+    }
+  }
+
   &:not(:last-child) {
     border-radius: 0 0 $corner-radius $corner-radius;
+
     &:after {
       content: "";
       position: absolute;

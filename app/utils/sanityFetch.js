@@ -3,7 +3,7 @@
 import { createClient } from "@sanity/client";
 
 const sanityFetch = async ({ query }) => {
-  console.log(process.env.USE_CACHE);
+  
   const client = createClient({
     projectId: process.env.PROJECT_ID,
     dataset: process.env.DATASET || "production",

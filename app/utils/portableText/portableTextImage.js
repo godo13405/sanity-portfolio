@@ -3,7 +3,6 @@ import style from "./style.module.scss"
 const portableTextImage = {
   types: {
     image: ({ value, isInline }) => {
-      console.log(value.asset.tags)
       return (
         <figure className={style.figure}>
           <img

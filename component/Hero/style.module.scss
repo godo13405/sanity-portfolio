@@ -4,15 +4,6 @@
     height: 80vh;
     background-color: $palette-cornsilk;
     position: relative;
-    &:before {
-        content:"";
-        position: absolute;
-        bottom: 100%;
-        left: 0;
-        right: 0;
-        height: $nav-size;
-        background-color: $palette-cornsilk;
-    }
 
     .heroInner {
         height: 25rem;
