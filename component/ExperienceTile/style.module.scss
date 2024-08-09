@@ -1,0 +1,27 @@
+@import "../../styles/vars";
+
+.tileContainer {
+    background-color: $white;
+    padding: $corner-radius/2 $corner-radius;
+    border-radius: $corner-radius;
+    text-align: left;
+    width: 80%;
+    max-width: 35rem;
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    .secondaryContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: rgba($palette-gunmetal, .8);
+
+        img {
+            width: 6rem;
+            height: 3rem;
+            object-fit: contain;
+        }
+    }
+}

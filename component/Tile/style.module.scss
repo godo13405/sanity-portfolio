@@ -60,7 +60,6 @@
         flex-direction: column;
         gap: $gap/4;
         padding-top: $gap;
-        // background: linear-gradient(0deg, rgba($white,1) 50%, rgba($white,0) 100%);
         @include tile-background-gradient($white);
         * {
             color: $palette-gunmetal;
@@ -73,6 +72,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: $gap/4;
+        justify-content: center;
     }
 }
 

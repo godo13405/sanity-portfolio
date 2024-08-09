@@ -6,6 +6,7 @@ import Hero from "../component/Hero/Hero";
 import LogoStrip from "../component/LogoStrip/LogoStrip";
 import Link from "next/link";
 import TestimonialTileGrid from "../component/TestimonialTileGrid/TestimonialTileGrid";
+import ExperienceTimeline from "../component/ExperienceTimeline/ExperienceTimeline";
 
 const Home = () => {
   return <main>
@@ -38,6 +39,17 @@ const Home = () => {
     <div className="section unwhite">
       <div className="contained">
         <h2>Recent Experience</h2>
+        {sanityFetch({
+          query: `*[_type == 'experience']|order(startDate desc){
+    name,
+    endDate,
+    startDate,
+  "slug": slug.current,
+  "company": company-> {
+    name,
+    "imageUrl": image.asset->url
+  }
+        }[0...4]` }).then((data) => <ExperienceTimeline data={data} />)}
       </div>
     </div>
     <div className="section">
