@@ -12,3 +12,7 @@ $icon-button-size: 4rem;
 $nav-size: 3rem;
 
 $theme-border-radius: $corner-radius;
+
+@mixin tile-background-gradient($color) {
+    background: linear-gradient(0deg, rgba($color,1) 50%, rgba($color,0) 100%);
+}

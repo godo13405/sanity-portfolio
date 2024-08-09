@@ -7,7 +7,34 @@ $palette-cornsilk: #f0ecdb;
 $palette-gunmetal: #143642;
 $palette-moonstone: #75b8c8;
 $palette-thistle: #e0d1ef;
+
+$palette-green: #84CE99;
+$palette-yellow: #F1F39C;
 /* number */
 $half-corner-radius: 1.5rem;
 $corner-radius: 3rem;
 $gap: 2rem;
+
+
+/* classes */
+.PaletteCoral {
+    background-color: $palette-coral;
+}
+.PaletteCornsilk {
+    background-color: $palette-cornsilk;
+}
+.PaletteGunmetal {
+    background-color: $palette-gunmetal;
+}
+.PaletteMoonstone {
+    background-color: $palette-moonstone;
+}
+.PaletteThistle {
+    background-color: $palette-thistle;
+}
+.PaletteGreen {
+    background-color: $palette-green
+}
+.PaletteYellow {
+    background-color: $palette-yellow;
+}

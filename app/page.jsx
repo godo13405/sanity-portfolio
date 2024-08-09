@@ -17,7 +17,8 @@ const Home = () => {
       <div className="contained">
         {sanityFetch({
           query: `*[_type == 'project' && featured == true]|order(date desc){
-  "color": color.hex,
+          colour,
+  "color": colour.label,
   "imageUrl": image.asset->url,
   "slug": slug.current,
   name,
@@ -25,7 +26,7 @@ const Home = () => {
     "name": Name,
     "slug": Slug.current
   }
-}[0...4]` }).then((data) => <TileGrid data={data} />)}
+}[0...5]` }).then((data) => <TileGrid data={data} />)}
         <Link href="/project" className="link">View all</Link>
       </div>
     </div>
@@ -51,7 +52,7 @@ const Home = () => {
     shortText,
   "slug": slug.current,
   "imageUrl": image.asset->url
-        }[0...3]` }).then((data) => <TestimonialTileGrid data={data} />)}
+        }[0...4]` }).then((data) => <TestimonialTileGrid data={data} />)}
         <Link href="/testimonial" className="link">View all</Link>
       </div>
     </div>

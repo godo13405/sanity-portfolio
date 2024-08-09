@@ -5,10 +5,14 @@
         flex:1;
         display: flex;
         flex-direction: row;
-        gap: $gap*2;
+        gap: $gap*3;
         align-items: center;
         margin: 1em 0;
         animation: 30s linear infinite scroller;
+
+        &:hover {
+            animation-play-state: paused;
+        }
     }
 
     a,

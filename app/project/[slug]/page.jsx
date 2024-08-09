@@ -10,7 +10,7 @@ import Tag from "../../../component/Tag/Tag";
 const Project = async ({ params }) => {
   const dataArr = await sanityFetch({
     query: `*[_type == 'project' && slug.current == '${params.slug}'] {
-  "color": color.hex,
+  "color": colour.label,
   "imageUrl": image.asset->url,
   "slug": slug.current,
   tools[]->{
@@ -53,7 +53,7 @@ const Project = async ({ params }) => {
           <a href={`javascript:navigator.clipboard.writeText('${process.env.NEXT_PUBLIC_URL}/${data.slug}')`} className={style.iconButton}>
             <img src="/img/share.svg" />
           </a>
-          <img className={style.featuredImage} src={data.imageUrl} style={{ backgroundColor: `${data.color || 'grey'}` }} />
+          <img className={`${style.featuredImage} ${style[data.color.replace(" ", "")]}`} src={data.imageUrl} />
           {data.company && <a className={style.companyContainer}><img src={data.company.imageUrl} /></a>}
         </div>
 

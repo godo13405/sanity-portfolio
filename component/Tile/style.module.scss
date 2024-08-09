@@ -60,7 +60,8 @@
         flex-direction: column;
         gap: $gap/4;
         padding-top: $gap;
-        background: linear-gradient(0deg, rgba($white,1) 50%, rgba($white,0) 100%);
+        // background: linear-gradient(0deg, rgba($white,1) 50%, rgba($white,0) 100%);
+        @include tile-background-gradient($white);
         * {
             color: $palette-gunmetal;
             text-decoration: none;
@@ -72,5 +73,50 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: $gap/4;
+    }
+}
+
+/* Hover Colours */
+
+.background-PaletteCoral:hover {
+    background-color: $palette-coral;
+    .textContainer {
+        @include tile-background-gradient($palette-coral);
+    }
+}
+.background-PaletteCornsilk:hover {
+    background-color: $palette-cornsilk;
+    .textContainer {
+        @include tile-background-gradient($palette-cornsilk);
+    }
+}
+.background-PaletteGunmetal:hover {
+    background-color: $palette-gunmetal;
+    .textContainer {
+        @include tile-background-gradient($palette-gunmetal);
+    }
+}
+.background-PaletteMoonstone:hover {
+    background-color: $palette-moonstone;
+    .textContainer {
+        @include tile-background-gradient($palette-moonstone);
+    }
+}
+.background-PaletteThistle:hover {
+    background-color: $palette-thistle;
+    .textContainer {
+        @include tile-background-gradient($palette-thistle);
+    }
+}
+.background-PaletteGreen:hover {
+    background-color: $palette-green;
+    .textContainer {
+        @include tile-background-gradient($palette-green);
+    }
+}
+.background-PaletteYellow:hover {
+    background-color: $palette-yellow;
+    .textContainer {
+        @include tile-background-gradient($palette-yellow);
     }
 }
