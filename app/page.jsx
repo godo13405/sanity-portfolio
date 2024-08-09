@@ -7,6 +7,8 @@ import LogoStrip from "../component/LogoStrip/LogoStrip";
 import Link from "next/link";
 import TestimonialTileGrid from "../component/TestimonialTileGrid/TestimonialTileGrid";
 import ExperienceTimeline from "../component/ExperienceTimeline/ExperienceTimeline";
+import Tag from "../component/Tag/Tag";
+import style from "./style.module.scss";
 
 const Home = () => {
   return <main>
@@ -34,6 +36,18 @@ const Home = () => {
     <div className="section">
       <div className="contained">
         <h2>Skills</h2>
+        {sanityFetch({
+          query: `*[_type == 'tool' || (_type == 'tag' && skill == true)]{
+  "slug": Slug.current,
+  "name": Name,
+  "imageUrl": image.asset->url,
+  _type
+  }` }).then((data) => {
+    return <>
+      <div className={style.toolsContainer}>{data.filter(x => x._type == 'tool').map((tool, k) => <img src={tool.imageUrl} title={tool.name} />)}</div>
+      <div className={style.skillsContainer}>{data.filter(x => x._type == 'tag').map((tag, k) => <Tag data={tag} />)}</div>
+    </>
+  })}
       </div>
     </div>
     <div className="section unwhite">

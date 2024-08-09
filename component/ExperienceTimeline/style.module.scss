@@ -16,6 +16,9 @@
         bottom: 4rem;
         left: 0;
         width: 50%;
+        @media all and (max-width: $width-med) {
+            width: 100%;
+        }
         border-right: .4em solid rgba($white, .6);
         z-index: -1;
     }
