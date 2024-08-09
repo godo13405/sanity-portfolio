@@ -7,6 +7,8 @@
     gap: $gap;
 
     > * {
-        width: calc((100% - $gap)/2);
+        @media all and (min-width: $width-med) {
+            width: calc((100% - $gap)/2);
+        }
     }
 }
