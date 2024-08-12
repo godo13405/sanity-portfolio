@@ -6,13 +6,13 @@
     text-decoration: none;
     position: relative;
     border-radius: $corner-radius/2;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     justify-content: end;
     filter: drop-shadow(-.2em .4em .4em rgba($palette-gunmetal, .2));
 
-    height: clamp(15em, 30vmin, 30em);
+    height: 15em;
 
     i {
         position: absolute;
@@ -39,17 +39,18 @@
 
         mask-image: url('/mask/hero.svg'), url('/mask/hero-top-right.svg');
         mask-repeat: no-repeat, no-repeat;
-        mask-size: 100%, 120px;
+        mask-size: 100%, 100px;
         mask-composite: subtract;
-        mask-position: center, 120% top;
+        mask-position: top right, 150% top;
 
         transition: mask-position .2s ease-out;
-
+        border-radius: $corner-size/2;
+        overflow: hidden;
     }
 
     &:hover {
         &:after {
-            mask-position: center, 100% top;
+            mask-position: center, right top;
         }
     }
 
@@ -74,9 +75,9 @@
     }
 
     &:not(:hover) {
-        &:after {
-            right: -$corner-size;
-        }
+        // &:after {
+        //     right: -$corner-size;
+        // }
 
         .iconButton {
             margin: $gap/4;
@@ -90,6 +91,7 @@
         gap: $gap/4;
         padding: $gap 1em 1em;
         z-index: 10;
+        border-radius: 0 0 $corner-size/2 $corner-radius/2;
         @include tile-background-gradient($white);
 
         * {
@@ -101,7 +103,7 @@
     .tagsContainer {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         gap: $gap/4;
         justify-content: center;
     }

@@ -6,6 +6,12 @@
     flex-direction: row;
     justify-content: center;
 }
+
+.toolsContainer,
+.skillsContainer {
+    width: 100%;
+    flex-wrap: wrap;
+}
 .toolsContainer{
     gap: $gap;
     margin: $gap 0 0;
@@ -24,7 +30,7 @@
 }
 
 .skillsContainer {
-    font-size: 1.8em;
+    font-size: 1.6em;
     gap: $gap/2;
     margin: $gap 0 0;
     flex-wrap: wrap;
