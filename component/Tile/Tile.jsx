@@ -6,7 +6,8 @@ import style from "./style.module.scss";
 
 const Tile = ({ data }) => {
   return (
-    <Link href={`/project/${data.slug}`} className={`${style.TileContainer} ${data.color && style[`background-${data.color.replace(" ", "")}`]}`} style={{ backgroundImage: `url(${data.imageUrl})` }}>
+    <Link href={`/project/${data.slug}`} className={`${style.TileContainer} ${data.color && style[`background-${data.color.replace(" ", "")}`]}`}>
+      <i style={{ backgroundImage: `url(${data.imageUrl})` }}></i>
       <div className={`${style.iconButton} IconButton`}>
         <img src="/img/arrow.svg" />
       </div>

@@ -20,7 +20,6 @@ const Home = () => {
       <div className="contained">
         {sanityFetch({
           query: `*[_type == 'project' && featured == true]|order(date desc){
-          colour,
   "color": colour.label,
   "imageUrl": image.asset->url,
   "slug": slug.current,
