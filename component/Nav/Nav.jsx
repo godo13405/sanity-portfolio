@@ -9,16 +9,10 @@ const Nav = () => {
                 <img src="/img/face.svg" />
             </Link>
 
-            <div className={style.socials}>
-                <Link href="https://linkedin/com/in/goncaloandrade" target="_blank">
-                    <img src="/img/linkedin.svg" />
-                </Link>
-                <Link href="https://discord.com/users/289787309061046272" target="_blank">
-                    <img src="/img/discord.svg" />
-                </Link>
-                <Link href="mailto:goncalo@stratfordandrade.com" target="_blank">
-                    <img src="/img/mail.svg" />
-                </Link>
+            <div className={style.links}>
+                <Link href="/project">Projects</Link>
+                <Link href="/testimonial">Testimonials</Link>
+                <Link href="mailto:goncalo@stratfordandrade.com?subject=Getting%20in%20touch%20from%20your%20portfolio&body=Hi%20Goncalo%0A%0AI've%20just%20been%20to%20your%20portfolio%20site%2C%20and%20would%20love%20to%20get%20in%20touch%20and%20learn%20more%20about%20you.">Get in Touch</Link>
             </div>
         </div>
     </nav>

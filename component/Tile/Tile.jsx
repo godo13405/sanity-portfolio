@@ -4,9 +4,9 @@ import Link from "next/link";
 import Tag from "../Tag/Tag";
 import style from "./style.module.scss";
 
-const Tile = ({ data }) => {
+const Tile = ({ data, k }) => {
   return (
-    <Link href={`/project/${data.slug}`} className={`${style.TileContainer} ${data.color && style[`background-${data.color.replace(" ", "")}`]}`}>
+    <Link key={k} href={`/project/${data.slug}`} className={`${style.TileContainer} ${data.color && style[`background-${data.color.replace(" ", "")}`]}`}>
       <i style={{ backgroundImage: `url(${data.imageUrl})` }}></i>
       <div className={`${style.iconButton} IconButton`}>
         <img src="/img/arrow.svg" />

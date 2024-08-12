@@ -28,16 +28,22 @@
         height: 2rem;
     }
 
-    .socials {
+    .links {
         display: flex;
         flex-direction: row;
         gap: 1em;
         align-items: center;
 
-        a,
-        img {
-            width: 24px;
-            height: 24px;
+        a {
+            font-weight: 600;
+            text-decoration: none;
+            color: $palette-gunmetal;
+            transition: color .8s ease-in-out;
+
+            &:hover {
+                color: $palette-coral;
+                transition: color .2s ease-in-out;
+            }
         }
     }
 }
