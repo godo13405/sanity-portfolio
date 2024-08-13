@@ -7,7 +7,6 @@ import style from "./style.module.scss";
 const ExperienceTile = ({ data, k }) => {
     return <InView key={k}>
         {({ inView, ref, entry }) => {
-            console.log(entry);
             return <div className={`${style.tileContainer} ${entry && entry.isIntersecting ? style.inView :''}`} ref={ref}>
             <h3>{data.name}</h3>
             <div className={style.secondaryContainer}>

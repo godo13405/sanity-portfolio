@@ -12,6 +12,14 @@
     text-decoration: none;
     color: $palette-gunmetal;
 
+    opacity: 0;
+    transform: translateY(4em);
+    @for $i from 1 through 5 {
+        &.inView:nth-child(#{$i}) {
+          animation: .4s ease-out #{$i/5}s forwards animateIn;
+        }
+      }
+
     > img {
         width: 3rem;
         opacity: .4;
@@ -51,4 +59,11 @@
         }
     }
 
+}
+
+@keyframes animateIn {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
