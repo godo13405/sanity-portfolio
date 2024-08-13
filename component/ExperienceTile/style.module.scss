@@ -2,8 +2,8 @@
 
 .tileContainer {
     background-color: $white;
-    padding: $corner-radius/2 $corner-radius;
-    border-radius: $corner-radius;
+    padding: $corner-radius/4 $corner-radius/2;
+    border-radius: $corner-radius/2;
     text-align: left;
     width: 80%;
     max-width: 35rem;

@@ -18,6 +18,8 @@ const Home = () => {
     </div>
     <div className="section unwhite">
       <div className="contained">
+        <h2>Projects</h2>
+        <p>See some of my best work</p>
         {sanityFetch({
           query: `*[_type == 'project' && featured == true]|order(date desc){
   "color": colour.label,
@@ -84,9 +86,20 @@ const Home = () => {
     <div className="section unwhite">
       <div className="contained">
         <h2>Giving Back</h2>
+        <p>I enjoy teaching and mentoring</p>
+
+        <div className={style.schoolLogoContainer}>
+          <a href="https://adplist.org/mentors/goncalo-andrade" target="_blank">
+            <img title="ADPList" src="https://cdn.sanity.io/images/a8hjghpv/production/2b852b8275fd2c98664f58192118df0a604a788e-200x120.svg" />
+          </a>
+          <a href="https://myuxacademy.com/" target="_blank">
+            <img title="UX Academy" src="https://cdn.sanity.io/images/a8hjghpv/production/8cd53d3f4001156a1c9fa566d3110b9679f06062-200x120.svg" />
+          </a>
+        
+        </div>
 
         {/* ADPList booking form */}
-        <section style={{
+        {/* <section style={{
           height: 496,
           boxShadow: 'rgba(142, 151, 158, 0.15) 0px 4px 19px 0px',
           borderRadius: 16,
@@ -95,7 +108,7 @@ const Home = () => {
           maxWidth: 650
         }}>
           <iframe src="https://adplist.org/widgets/booking?src=goncalo-andrade" title="" width="100%" height="100%" loading="lazy" style={{ border: 0 }}></iframe>
-        </section>
+        </section> */}
       </div>
     </div>
   </main>
