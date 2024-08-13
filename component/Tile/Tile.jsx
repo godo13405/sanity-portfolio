@@ -3,10 +3,13 @@
 import Link from "next/link";
 import Tag from "../Tag/Tag";
 import style from "./style.module.scss";
+import { InView } from "react-intersection-observer";
 
 const Tile = ({ data, k }) => {
   return (
-    <Link key={k} href={`/project/${data.slug}`} className={`${style.TileContainer} ${data.color && style[`background-${data.color.replace(" ", "")}`]}`}>
+    <InView key={k}>
+    {({ inView, ref, entry }) => {
+    return <Link href={`/project/${data.slug}`} ref={ref} className={`${style.TileContainer} ${entry && entry.isIntersecting ? style.inView :''} ${data.color && style[`background-${data.color.replace(" ", "")}`]}`}>
       <i style={{ backgroundImage: `url(${data.imageUrl})` }}></i>
       <div className={`${style.iconButton} IconButton`}>
         <img src="/img/arrow.svg" />
@@ -15,7 +18,8 @@ const Tile = ({ data, k }) => {
         <h4>{data.name}</h4>
         {data.tags && data.tags.length && <div className={style.tagsContainer}>{data.tags.map((tag, k) => <Tag key={k} data={tag} />)}</div>}
       </div>
-    </Link>
+    </Link>}}
+    </InView>
   );
 };
 

@@ -12,6 +12,15 @@
     justify-content: end;
     filter: drop-shadow(-.2em .4em .4em rgba($palette-gunmetal, .2));
 
+    // animation: .4s ease-out forwards animateIn;
+    opacity: 0;
+    transform: translateY(4em);
+    @for $i from 1 through 5 {
+        &.inView:nth-child(#{$i}) {
+          animation: .4s ease-out #{$i/5}s forwards animateIn;
+        }
+      }
+
     height: 15em;
 
     i {
@@ -54,7 +63,6 @@
         }
     }
 
-
     .iconButton {
         background-color: $palette-coral;
         position: absolute;
@@ -75,10 +83,6 @@
     }
 
     &:not(:hover) {
-        // &:after {
-        //     right: -$corner-size;
-        // }
-
         .iconButton {
             margin: $gap/4;
             background-color: transparent;
@@ -205,5 +209,12 @@
 
     .textContainer {
         @include tile-background-gradient($palette-yellow);
+    }
+}
+
+@keyframes animateIn {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
