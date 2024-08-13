@@ -8,6 +8,17 @@
     width: 80%;
     max-width: 35rem;
 
+    opacity: 0;
+    transform: translateY(4em);
+
+    &.inView {
+        @for $i from 1 through 5 {
+            &.inView:nth-child(#{$i}) {
+              animation: .4s ease-out #{$i/5}s forwards animateIn;
+            }
+          }
+    }
+
     h3 {
         font-size: 1.4em;
     }
@@ -23,5 +34,13 @@
             height: 3rem;
             object-fit: contain;
         }
+    }
+}
+
+
+@keyframes animateIn {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

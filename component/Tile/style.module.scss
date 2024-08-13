@@ -9,10 +9,9 @@
     overflow: visible;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     filter: drop-shadow(-.2em .4em .4em rgba($palette-gunmetal, .2));
 
-    // animation: .4s ease-out forwards animateIn;
     opacity: 0;
     transform: translateY(4em);
     @for $i from 1 through 5 {
