@@ -11,14 +11,20 @@
     flex-direction: column;
     justify-content: flex-end;
     filter: drop-shadow(-.2em .4em .4em rgba($palette-gunmetal, .2));
+    text-shadow: none;
 
     opacity: 0;
     transform: translateY(4em);
-    @for $i from 1 through 5 {
-        &.inView:nth-child(#{$i}) {
-          animation: .4s ease-out #{$i/5}s forwards animateIn;
-        }
-      }
+
+    &.inView {
+        animation: .4s ease-out forwards animateIn;
+    }
+
+    // @for $i from 1 through 5 {
+    //     &.inView:nth-child(#{$i}) {
+    //       animation: .4s ease-out #{$i/5}s forwards animateIn;
+    //     }
+    //   }
 
     height: 15em;
 

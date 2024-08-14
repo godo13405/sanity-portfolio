@@ -4,9 +4,11 @@
     display: flex;
     flex-direction: row;
     background-color: $palette-cornsilk;
+
     &.white {
         background-color: $white;
     }
+
     border-radius: $corner-radius;
     padding: $gap/2;
     text-decoration: none;
@@ -14,19 +16,26 @@
 
     opacity: 0;
     transform: translateY(4em);
-    @for $i from 1 through 5 {
-        &.inView:nth-child(#{$i}) {
-          animation: .4s ease-out #{$i/5}s forwards animateIn;
-        }
-      }
 
-    > img {
+    &.inView {
+        animation: .4s ease-out forwards animateIn;
+    }
+
+    // @for $i from 1 through 5 {
+    //     &.inView:nth-child(#{$i}) {
+    //       animation: .4s ease-out #{$i/5}s forwards animateIn;
+    //     }
+    //   }
+
+    >img {
         width: 3rem;
         opacity: .4;
+
         &:last-child {
             transform: scaleX(-1);
         }
     }
+
     .contentContainer {
         flex: 1;
     }
@@ -46,6 +55,7 @@
         .identity {
             display: flex;
             flex-direction: column;
+
             * {
                 text-align: left;
                 margin: 0;

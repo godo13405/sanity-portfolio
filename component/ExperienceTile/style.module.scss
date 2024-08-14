@@ -12,11 +12,12 @@
     transform: translateY(4em);
 
     &.inView {
-        @for $i from 1 through 5 {
-            &.inView:nth-child(#{$i}) {
-              animation: .4s ease-out #{$i/5}s forwards animateIn;
-            }
-          }
+        animation: .4s ease-out forwards animateIn;
+        // @for $i from 1 through 5 {
+        //     &.inView:nth-child(#{$i}) {
+        //       animation: .4s ease-out #{$i/5}s forwards animateIn;
+        //     }
+        //   }
     }
 
     h3 {
