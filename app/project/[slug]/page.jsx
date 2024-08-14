@@ -25,7 +25,12 @@ const Project = async ({ params }) => {
   "relatedProjects": relatedProjects[]->{
     "imageUrl": image.asset->url,
     "slug": slug.current,
-    name
+    name,
+    "color": colour.label,
+    tags[]-> {
+      "name": Name,
+      "slug": Slug.current
+    }
   },
   name,
   "body": Body[]{
@@ -61,14 +66,20 @@ const Project = async ({ params }) => {
         {data.tags && data.tags.length && <div className={style.tagsContainer}>{data.tags.map((tag, k) => <Tag key={k} data={tag} />)}</div>}
       </div>
     </div>
-    <div className={`${style.projectContainerInner} contained`}>
-      <PortableText
-        value={data.body}
-        components={portableTextImage}
-      />
-      <h2>You might also like</h2>
-      <TileGrid data={data.relatedProjects} />
-    </div>
+    <div className="section">
+      <div className={`${style.projectContainerInner} contained`}>
+        <PortableText
+          value={data.body}
+          components={portableTextImage}
+        />
+      </div>
+      </div>
+      <div className="section unwhite">
+        <div className="contained">
+          <h2>You might also like</h2>
+          <TileGrid data={data.relatedProjects} dropCap={false} />
+        </div>
+      </div>
   </article >
 };
 
