@@ -21,6 +21,14 @@ body {
   font-style: normal;
   line-height: 1.2em;
   color: $palette-gunmetal;
+
+  background-color: $palette-cornsilk;
+  // background: url('/pattern/lisbon.svg') center repeat $palette-cornsilk;
+  // background: url('/pattern/overlapping-circles.svg') center space repeat $palette-cornsilk;
+  background-size: 80px;
+
+  // background: url('/pattern/azulejos.svg') center space repeat $palette-cornsilk;
+  // background-size: 100px;
 }
 
 h1,
@@ -32,7 +40,7 @@ h6 {
   font-weight: 700;
   line-height: 1em;
   font-style: normal;
-  margin: .7em 0 0;
+  margin: 0.7em 0 0;
 }
 
 h1 {
@@ -73,7 +81,6 @@ h3 {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: $white;
 
   &:first-child:before {
     content: "";
@@ -86,10 +93,34 @@ h3 {
   }
 
   &.unwhite {
+    // text-shadow: 0 0 10px $palette-cornsilk, 0 0 20px $palette-cornsilk,
+    //   0 0 30px $palette-cornsilk, 0 0 40px $palette-cornsilk,
+    //   0 0 50px $palette-cornsilk, 0 0 60px $palette-cornsilk,
+    //   0 0 70px $palette-cornsilk;
 
-    &,
+    .tag:not(:hover) {
+      background-color: rgba($palette-cornsilk, 0.8);
+      text-shadow: none;
+    }
+
+    &:after {
+      background-color: $white;
+    }
+  }
+
+  &:not(.unwhite) {
+    background-color: $white;
     &:before {
-      background-color: $palette-cornsilk;
+      $size: 48px;
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -$size;
+      height: $size;
+      background: url("/mask/reverse-corner-left-white.svg") bottom left
+          no-repeat,
+        url("/mask/reverse-corner-right-white.svg") bottom right no-repeat;
     }
   }
 
@@ -106,12 +137,6 @@ h3 {
       z-index: -1;
       background-color: $palette-cornsilk;
       z-index: -1;
-    }
-
-    &.unwhite {
-      &:after {
-        background-color: $white;
-      }
     }
   }
 }
