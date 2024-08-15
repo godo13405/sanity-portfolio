@@ -1,0 +1,27 @@
+@import "../../../styles/vars";
+
+.bodyContainer {
+    max-width: $width-sml;
+    padding: 2em 0;
+    text-align: left;
+}
+
+.headingBlock {
+    h2 {
+        margin: 1em 0 .2em;
+    }
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+    justify-content: center;
+    img {
+        $size: 6em;
+        border-radius: 100%;
+        width: $size;
+        height: $size;
+        background-color: rgba($white, .4);
+    }
+}

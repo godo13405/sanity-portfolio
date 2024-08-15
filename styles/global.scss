@@ -70,6 +70,13 @@ h3 {
   @media all and (max-width: $width-max) {
     padding: 0 $gap/2;
   }
+
+  &:not(.projectText) {
+    > h1,
+    > h2 {
+      margin-bottom: 1em;
+    }
+  }
 }
 
 .section {
@@ -99,7 +106,7 @@ h3 {
     //   0 0 70px $palette-cornsilk;
 
     .tag:not(:hover) {
-      background-color: rgba($palette-cornsilk, 0.8);
+      // background-color: rgba($palette-cornsilk, 0.8);
       text-shadow: none;
     }
 

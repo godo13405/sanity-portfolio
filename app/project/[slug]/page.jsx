@@ -67,7 +67,7 @@ const Project = async ({ params }) => {
       </div>
     </div>
     <div className="section">
-      <div className={`${style.projectContainerInner} contained`}>
+      <div className={`${style.projectContainerInner} contained projectText`}>
         <PortableText
           value={data.body}
           components={portableTextImage}
