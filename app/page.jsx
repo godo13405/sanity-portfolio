@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <main>
       <Hero />
-      <div className="section">
+      <div className="section fit">
         <LogoStrip />
       </div>
       <div className="section unwhite">
@@ -95,6 +95,13 @@ const Home = () => {
           }).then((data) => (
             <ExperienceTimeline data={data} />
           ))}
+          <a
+            href="cv.goncalo.stratfordandrade.com"
+            target="_blank"
+            className="link"
+          >
+            View my full CV
+          </a>
         </div>
       </div>
       <div className="section">
@@ -127,9 +134,9 @@ const Home = () => {
         <div className="contained">
           <div className={style.headingBlock}>
             <h2>Giving Back</h2>
-            <p>I enjoy teaching and mentoring</p>
           </div>
 
+          <p>I've taught and mentored hundreads of studecnts over the years</p>
           <div className={style.schoolLogoContainer}>
             <a
               href="https://adplist.org/mentors/goncalo-andrade"
@@ -148,17 +155,30 @@ const Home = () => {
             </a>
           </div>
 
-          {/* ADPList booking form */}
-          {/* <section style={{
-          height: 496,
-          boxShadow: 'rgba(142, 151, 158, 0.15) 0px 4px 19px 0px',
-          borderRadius: 16,
-          overflow: 'hidden',
-          width: '100%',
-          maxWidth: 650
-        }}>
-          <iframe src="https://adplist.org/widgets/booking?src=goncalo-andrade" title="" width="100%" height="100%" loading="lazy" style={{ border: 0 }}></iframe>
-        </section> */}
+          <p>
+            Book a{" "}
+            <a
+              className="link"
+              target="_blank"
+              href="https://adplist.org/mentors/goncalo-andrade?session=4963-general-mentorship"
+            >
+              mentoring session
+            </a>{" "}
+            or{" "}
+            <a
+              className="link"
+              target="_blank"
+              href="https://adplist.org/mentors/goncalo-andrade?session=45743-craft-your-portfolio"
+            >
+              porfolio assitance
+            </a>{" "}
+            with me
+          </p>
+          <hr />
+          <div className={style.headingBlock}>
+            <h2>Writing</h2>
+            <p>I have also written articles on Medium</p>
+          </div>
         </div>
       </div>
     </main>

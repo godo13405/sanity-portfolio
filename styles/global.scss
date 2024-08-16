@@ -81,8 +81,10 @@ h3 {
 
 .section {
   width: 100%;
-  padding-top: $corner-radius;
-  padding-bottom: $corner-radius;
+  padding: clamp($corner-radius, 15vmin, $corner-radius*2.6) 1em;
+  &.fit {
+    padding: $corner-radius 1em;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,4 +154,9 @@ h3 {
   color: $palette-coral;
   font-weight: 600;
   text-decoration: none;
+  display: inline-block;
+
+  .contained > & {
+    margin-top: 2em;
+  }
 }
