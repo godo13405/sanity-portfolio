@@ -24,7 +24,6 @@ const Project = async ({ params }) => {
 }`,
   });
   const data = dataArr[0];
-  console.log("🚀 ~ Project ~ data:", params.slug);
 
   return (
     <article className={style.projectContainer}>

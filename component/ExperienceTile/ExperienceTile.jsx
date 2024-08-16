@@ -11,7 +11,7 @@ const ExperienceTile = ({ data, k }) => {
             <h3>{data.name}</h3>
             <div className={style.secondaryContainer}>
                 <img src={data.company.imageUrl} title={data.company.name} />
-                {dateTransform(data.startDate)} - ${dateTransform(data.endDate)}
+                {dateTransform(data.startDate)} - {dateTransform(data.endDate)}
             </div>
         </div>}}
     </InView>
