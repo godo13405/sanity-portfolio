@@ -135,49 +135,66 @@ const Home = () => {
           <div className={style.headingBlock}>
             <h2>Giving Back</h2>
           </div>
-
-          <p>I've taught and mentored hundreads of studecnts over the years</p>
-          <div className={style.schoolLogoContainer}>
-            <a
-              href="https://adplist.org/mentors/goncalo-andrade"
-              target="_blank"
-            >
-              <img
-                title="ADPList"
-                src="https://cdn.sanity.io/images/a8hjghpv/production/2b852b8275fd2c98664f58192118df0a604a788e-200x120.svg"
-              />
-            </a>
-            <a href="https://myuxacademy.com/" target="_blank">
-              <img
-                title="UX Academy"
-                src="https://cdn.sanity.io/images/a8hjghpv/production/8cd53d3f4001156a1c9fa566d3110b9679f06062-200x120.svg"
-              />
-            </a>
-          </div>
-
-          <p>
-            Book a{" "}
-            <a
-              className="link"
-              target="_blank"
-              href="https://adplist.org/mentors/goncalo-andrade?session=4963-general-mentorship"
-            >
-              mentoring session
-            </a>{" "}
-            or{" "}
-            <a
-              className="link"
-              target="_blank"
-              href="https://adplist.org/mentors/goncalo-andrade?session=45743-craft-your-portfolio"
-            >
-              porfolio assitance
-            </a>{" "}
-            with me
-          </p>
-          <hr />
-          <div className={style.headingBlock}>
-            <h2>Writing</h2>
-            <p>I have also written articles on Medium</p>
+          <div className={style.givingBackContainer}>
+            <div className={style.givingBackContainerInner}>
+              <div>
+                <h3>Teaching</h3>
+                <p>
+                  I've taught and mentored hundreads of students over the years
+                </p>
+              </div>
+              <a
+                href="https://adplist.org/mentors/goncalo-andrade"
+                target="_blank"
+              >
+                <img
+                  title="ADPList"
+                  src="https://cdn.sanity.io/images/a8hjghpv/production/2b852b8275fd2c98664f58192118df0a604a788e-200x120.svg"
+                />
+              </a>
+            </div>
+            <div className={style.givingBackContainerInner}>
+              <div>
+                <h3>Mentoring</h3>
+                <p>
+                  I'm part of the Amazing Design People List, you can book a{" "}
+                  <a
+                    className="link"
+                    target="_blank"
+                    href="https://adplist.org/mentors/goncalo-andrade?session=4963-general-mentorship"
+                  >
+                    mentoring session
+                  </a>{" "}
+                  or{" "}
+                  <a
+                    className="link"
+                    target="_blank"
+                    href="https://adplist.org/mentors/goncalo-andrade?session=45743-craft-your-portfolio"
+                  >
+                    porfolio assitance
+                  </a>{" "}
+                  with me
+                </p>
+              </div>
+              <a href="https://myuxacademy.com/" target="_blank">
+                <img
+                  title="UX Academy"
+                  src="https://cdn.sanity.io/images/a8hjghpv/production/8cd53d3f4001156a1c9fa566d3110b9679f06062-200x120.svg"
+                />
+              </a>
+            </div>
+            <div className={style.givingBackContainerInner}>
+              <div>
+                <h3>Writing</h3>
+                <p>I have also written articles on Medium</p>
+              </div>
+              <a
+                href="https://adplist.org/mentors/goncalo-andrade"
+                target="_blank"
+              >
+                <img title="Medium" src="/img/medium.svg" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
