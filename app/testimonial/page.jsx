@@ -17,7 +17,7 @@ const Project = async ({ params }) => {
 
   return <main className={`section unwhite`}>
     <div className="contained">
-      <div className={style.headingBlock}>
+      <div>
         <h1>Testimonials</h1>
         <TestimonialTileGrid data={data} isWhite={true} />
         </div>
