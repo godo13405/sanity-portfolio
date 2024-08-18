@@ -5,6 +5,10 @@
     // background-color: $palette-cornsilk;
     position: relative;
 
+    .pictureContainer {
+        @include tile-shadow;
+    }
+
     .heroInner {
         height: 30rem;
         gap: $gap;

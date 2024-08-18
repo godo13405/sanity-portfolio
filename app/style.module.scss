@@ -39,25 +39,13 @@
   }
 }
 
-.schoolLogoContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: $gap;
-  img {
-    background-color: rgba($white, 0.3);
-    border-radius: 100%;
-    width: 8rem;
-    height: 8rem;
-  }
-}
-
 .givingBackContainer {
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
     gap: $gap;
     flex-wrap: wrap;
+    @include tile-shadow;
   .givingBackContainerInner {
     flex:1;
     border-radius: $corner-radius;

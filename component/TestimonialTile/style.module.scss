@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: row;
     background-color: $palette-cornsilk;
+    @include tile-shadow(false);
 
     &.white {
         background-color: $white;
@@ -20,12 +21,6 @@
     &.inView {
         animation: .4s ease-out forwards animateIn;
     }
-
-    // @for $i from 1 through 5 {
-    //     &.inView:nth-child(#{$i}) {
-    //       animation: .4s ease-out #{$i/5}s forwards animateIn;
-    //     }
-    //   }
 
     >img {
         width: 3rem;

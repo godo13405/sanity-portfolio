@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-gunmetal, 0.2));
+  @include tile-shadow;
   text-shadow: none;
 
   opacity: 0;
@@ -19,12 +19,6 @@
   &.inView {
     animation: 0.4s ease-out forwards animateIn;
   }
-
-  // @for $i from 1 through 5 {
-  //     &.inView:nth-child(#{$i}) {
-  //       animation: .4s ease-out #{$i/5}s forwards animateIn;
-  //     }
-  //   }
 
   height: 15em;
 

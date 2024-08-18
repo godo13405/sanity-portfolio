@@ -17,3 +17,14 @@ $theme-border-radius: $corner-radius;
 @mixin tile-background-gradient($color) {
     background: linear-gradient(0deg, rgba($color,1) 50%, rgba($color,0) 100%);
 }
+
+@mixin tile-shadow ($unwhite: true){
+    @if $unwhite {
+
+        filter: drop-shadow(-0.2em 0.4em 0.4em rgba(darken($palette-cornsilk, 30), .4));
+  } @else {
+
+      filter: drop-shadow(-0.2em 0.4em 0.4em rgba(darken($palette-cornsilk, 60), .2));
+
+  }
+}
