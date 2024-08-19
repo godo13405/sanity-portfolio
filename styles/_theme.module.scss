@@ -38,3 +38,16 @@ $gap: 2rem;
 .PaletteYellow {
     background-color: $palette-yellow;
 }
+
+:export {
+    paletteWhite: $white;
+    paletteBackground: $background;
+    paletteCoral: $palette-coral;
+    paletteCornsilk: $palette-cornsilk;
+    paletteGunmetal: $palette-gunmetal;
+    paletteMoonstone: $palette-moonstone;
+    paletteThistle: $palette-thistle;
+
+    paletteGreen: $palette-green;
+    paletteYellow: $palette-yellow;
+}

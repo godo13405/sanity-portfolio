@@ -1,0 +1,77 @@
+@import "../../styles/vars";
+
+.outerContainer {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+    background-color: $white;
+    border-radius: $corner-radius;
+    @include tile-shadow;
+
+    > * {
+        &:first-child {
+            border-right: 1px solid rgba($palette-gunmetal, .2);
+            padding-right: $gap;
+        }
+    }
+
+    .portrait {
+        width: 100%;
+        height: 11rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    // Dividers
+    > * {
+        display: flex;
+        flex-direction: column;
+        // gap: $gap;
+        position: relative;
+        padding: $corner-radius/2;
+
+        > * {
+            margin: $gap/2 0;
+            padding: $gap/2 0;
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba($palette-gunmetal, .2);
+            }
+        }
+    }
+
+    .experienceTitle {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: $gap;
+        padding: $gap/4 0;
+        align-items: center;
+        
+
+        h3 {
+            margin: 0;
+        }
+
+        img {
+            height: 3rem;
+        }
+
+        p {
+            opacity: .6;
+            
+            text-wrap: nowrap;
+        }
+
+        .experienceSubtitle {
+            gap: $gap/2;
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+        }
+    }
+}
