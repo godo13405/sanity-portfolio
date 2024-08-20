@@ -18,6 +18,9 @@
     width: 100%;
     max-height: 50rem;
     margin-top: -20rem;
+    @media all and (max-width: $width-max) {
+      margin-top: -5rem;
+    }
     z-index: 0;
   }
 
@@ -30,8 +33,10 @@
     align-items: center;
     justify-content: center;
     z-index: 2;
-    @media all and (min-width: $width-max) {
-      padding: 0 10vmin;
+    padding: 0 10vmin;
+    @media all and (max-width: $width-max) {
+      padding: 0;
+      gap: $gap/2 $gap/4;
     }
 
     a {
@@ -41,14 +46,14 @@
 }
 
 .givingBackContainer {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-    gap: $gap;
-    flex-wrap: wrap;
-    @include tile-shadow;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+  flex-wrap: wrap;
+  @include tile-shadow;
   .givingBackContainerInner {
-    flex:1;
+    flex: 1;
     border-radius: $corner-radius;
     background-color: $white;
     padding: 1em;
@@ -58,9 +63,9 @@
     justify-content: space-between;
 
     img {
-        width: 10rem;
-        height: 6rem;
-        object-fit: contain;
+      width: 10rem;
+      height: 6rem;
+      object-fit: contain;
     }
   }
 }
