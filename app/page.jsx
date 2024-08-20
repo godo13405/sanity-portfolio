@@ -9,6 +9,7 @@ import TestimonialTileGrid from "../component/TestimonialTileGrid/TestimonialTil
 import ExperienceTimeline from "../component/ExperienceTimeline/ExperienceTimeline";
 import Tag from "../component/Tag/Tag";
 import style from "./style.module.scss";
+import MindBlown from "../component/img/mindBlown";
 
 const Home = () => {
   return (
@@ -48,28 +49,20 @@ const Home = () => {
             <h2>Skills</h2>
           </div>
           {sanityFetch({
-            query: `*[_type == 'tool' || (_type == 'tag' && skill == true)]{
+            query: `*[_type == 'tag' && skill == true]{
   "slug": Slug.current,
-  "name": Name,
-  "imageUrl": image.asset->url,
-  _type
+  "name": Name
   }`,
           }).then((data) => {
             return (
               <>
-                <div className={style.toolsContainer}>
-                  {data
-                    .filter((x) => x._type == "tool")
-                    .map((tool, k) => (
-                      <img src={tool.imageUrl} title={tool.name} />
-                    ))}
-                </div>
                 <div className={style.skillsContainer}>
-                  {data
-                    .filter((x) => x._type == "tag")
-                    .map((tag, k) => (
+                  <div className={style.skillTags}>
+                    {data.map((tag, k) => (
                       <Tag data={tag} />
                     ))}
+                  </div>
+                  <MindBlown />
                 </div>
               </>
             );
