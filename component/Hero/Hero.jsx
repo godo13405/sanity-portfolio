@@ -1,3 +1,4 @@
+import CareerYears from "../../app/utils/careerYears";
 import IconButton from "../IconButton/IconButton";
 import style from "./style.module.scss"
 
@@ -18,7 +19,7 @@ const Hero = () => {
 
             <div className={`${style.countersContainer} ${style.hideMobile}`}>
               <div>
-                <h2>14+</h2>
+                <h2>{CareerYears()}+</h2>
                 <p>years of experience</p>
               </div>
               <div>
