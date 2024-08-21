@@ -1,0 +1,23 @@
+@import "../../styles/vars";
+
+.footerContainer {
+  background-color: $palette-gunmetal;
+  padding: 2em;
+  * {
+    color: $white;
+    text-decoration: none;
+  }
+
+  .footerContainerInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    > * {
+        display: flex;
+        flex-direction: row;
+        gap: $gap;
+        align-items: center;
+    }
+  }
+}

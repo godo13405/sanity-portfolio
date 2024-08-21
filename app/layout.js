@@ -1,6 +1,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import localFont from 'next/font/local'
 import Nav from "../component/Nav/Nav"
+import Footer from "../component/Footer/Footer"
 
 const GTUltra = localFont({
   src: [
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
         <div style={{ paddingTop: "3rem" }}>
           {children}
         </div>
+        <Footer />
         <SpeedInsights />
       </body>
     </html>
