@@ -19,7 +19,8 @@
     max-height: 50rem;
     margin-top: -20rem;
     @media all and (max-width: $width-max) {
-      margin-top: -5rem;
+      margin: -22rem 0 -18rem;
+      height: 50rem;
     }
     z-index: 0;
   }
@@ -39,7 +40,7 @@
       gap: $gap/2 $gap/4;
     }
 
-    a {
+    a:not(:hover) {
       background-color: $white;
     }
   }

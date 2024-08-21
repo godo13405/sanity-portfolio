@@ -12,6 +12,9 @@
           11}s
           forwards
           infinite;
+          @media all and (max-width: $width-med) {
+            animation-name: anim-mobile-#{$i};
+          }
       }
 
       @keyframes anim-#{$i} {
@@ -29,7 +32,25 @@
           opacity: 0;
         }
         100% {
-          transform: translate(#{$x}px, -260px);
+          transform: translate(#{$x}px, -290px);
+        }
+      }
+      @keyframes anim-mobile-#{$i} {
+        $x: (random() * 683) - (683/2);
+        0% {
+          transform: translate(#{$x / 10}px, 0);
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        97% {
+          opacity: 0;
+        }
+        100% {
+          transform: translate(#{$x}px, -200%);
         }
       }
     }

@@ -59,7 +59,7 @@ const Home = () => {
                 <div className={style.skillsContainer}>
                   <div className={style.skillTags}>
                     {data.map((tag, k) => (
-                      <Tag data={tag} />
+                      <Tag key={k} data={tag} />
                     ))}
                   </div>
                   <MindBlown />
