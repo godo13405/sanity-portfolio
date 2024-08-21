@@ -23,7 +23,7 @@ const Hero = () => {
             </div>
             <div className={style.pictureContainer}>
                     <div className={style.picture} style={{backgroundImage: 'url(/img/me.png)'}} />
-                <IconButton className={style.IconButton} href="/cv.pdf" img="cv.svg" newTab={true}/>
+                    <IconButton className={style.IconButton} href="/cv" img="cv.svg" newTab={true}/>
                 <div className={style.iconButtonGroup}>
                     <IconButton href="cv.goncalo.stratfordandrade.com" img="linkedin.svg" newTab={true}/>
                     <IconButton href="cv.goncalo.stratfordandrade.com" img="discord.svg" newTab={true}/>
