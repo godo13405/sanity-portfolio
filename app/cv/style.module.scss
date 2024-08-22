@@ -7,14 +7,11 @@
   gap: $gap;
   background-color: $white;
   border-radius: $corner-radius;
-  @include tile-shadow;
-
-  > * {
-    &:first-child {
-      border-right: 1px solid rgba($palette-gunmetal, 0.2);
-      padding-right: $gap;
-    }
+  @media print {
+    max-width: none;
+    border-radius: 0;
   }
+  @include tile-shadow;
 
   .portrait {
     width: 100%;
@@ -25,6 +22,28 @@
   }
   h3 {
     font-size: 1.2rem;
+  }
+  a {
+    text-decoration: none;
+    font-weight: 800;
+    color: $palette-gunmetal;
+  }
+
+  small {
+    display: flex;
+    gap: $gap/4;
+    align-items: center;
+    font-weight: 400;
+    margin-top: 0.6em;
+    img {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  .article {
+    margin: 3rem 0;
+    display: block;
   }
 
   // Dividers
@@ -38,9 +57,42 @@
     > * {
       margin: $gap/2 0;
       padding: $gap/2 0;
-      &:not(:last-child) {
-        border-bottom: 1px solid rgba($palette-gunmetal, 0.2);
-      }
+    }
+  }
+  .primaryContainer {
+    flex: 1;
+    > :not(:last-child) {
+      border-bottom: 1px solid rgba($palette-gunmetal, 0.2);
+    }
+  }
+
+  .secondaryContainer {
+    width: 100%;
+    @media all and (min-width: $width-med) {
+      width: 20rem;
+    }
+    &:first-child {
+      border-right: 1px solid rgba($palette-gunmetal, 0.2);
+      padding-right: $gap;
+    }
+    h3 {
+      border-bottom: 1px solid rgba($palette-gunmetal, 0.2);
+    }
+  }
+
+  .intro {
+    text-align: center;
+  }
+
+  .toolsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $gap;
+    padding: $gap/2;
+    > * {
+      width: 2rem;
+      height: 2rem;
     }
   }
 
@@ -71,6 +123,15 @@
       flex-direction: row;
       align-items: center;
       flex: 1;
+    }
+  }
+
+  .mentorImages {
+    display: flex;
+    gap: $gap;
+    img {
+      width: 4rem;
+      height: 4rem;
     }
   }
 }
