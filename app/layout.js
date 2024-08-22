@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={GTUltra.className}>
       <body>
         <Nav />
-        <div style={{ paddingTop: "3rem" }}>
+        <div>
           {children}
         </div>
         <Footer />

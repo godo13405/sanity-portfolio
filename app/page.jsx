@@ -90,8 +90,7 @@ const Home = () => {
             <ExperienceTimeline data={data} />
           ))}
           <a
-            href="https://cv.goncalo.stratfordandrade.com"
-            target="_blank"
+            href="/cv"
             className="link"
           >
             View my full CV
