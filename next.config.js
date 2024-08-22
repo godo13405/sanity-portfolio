@@ -10,4 +10,7 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+const withVercelToolbar = require("@vercel/toolbar/plugins/next")();
+
+module.exports = withVercelToolbar(nextConfig);
+

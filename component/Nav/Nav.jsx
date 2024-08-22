@@ -6,7 +6,7 @@ const Nav = () => {
     return <nav className={style.navContainer}>
         <div className={`contained`}>
             <Link href="/">
-                <img src="/img/face.svg" />
+                <img src="/img/face.svg" alt="Goncalo Stratford Andrade" />
             </Link>
 
             <div className={style.links}>

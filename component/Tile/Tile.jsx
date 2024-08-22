@@ -4,6 +4,7 @@ import Link from "next/link";
 import Tag from "../Tag/Tag";
 import style from "./style.module.scss";
 import { InView } from "react-intersection-observer";
+import Arrow from "../img/arrow";
 
 const Tile = ({ data, k }) => {
   return (
@@ -12,7 +13,7 @@ const Tile = ({ data, k }) => {
     return <Link href={`/project/${data.slug}`} ref={ref} className={`${style.TileContainer} ${entry && entry.isIntersecting ? style.inView :''} ${data.color && style[`background-${data.color.replace(" ", "")}`]}`}>
       <i style={{ backgroundImage: `url(${data.imageUrl})` }}></i>
       <div className={`${style.iconButton} IconButton`}>
-        <img src="/img/arrow.svg" />
+        <Arrow />
       </div>
       <div className={style.textContainer}>
         <h4>{data.name}</h4>

@@ -56,10 +56,10 @@ const Project = async ({ params }) => {
       <div className="contained">
         <div className={style.featuredContainer}>
           <a href={`javascript:navigator.clipboard.writeText('${process.env.NEXT_PUBLIC_URL}/${data.slug}')`} className={style.iconButton}>
-            <img src="/img/share.svg" />
+            <img src="/img/share.svg" alt="Share" />
           </a>
-          <img className={`${style.featuredImage} ${style[data.color.replace(" ", "")]}`} src={data.imageUrl} />
-          {data.company && <a className={style.companyContainer}><img src={data.company.imageUrl} /></a>}
+          <img className={`${style.featuredImage} ${style[data.color.replace(" ", "")]}`} src={data.imageUrl} alt={`${data.name} header image`} />
+          {data.company && <a className={style.companyContainer}><img src={data.company.imageUrl} alt={data.company.name} /></a>}
         </div>
 
         <h2>{data.name}</h2>

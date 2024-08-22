@@ -60,8 +60,8 @@
     &:after {
       mask-position: center, right top;
     }
-    .iconButton img {
-      mix-blend-mode: plus-lighter;
+    .iconButton path {
+      stroke: $white;
     }
   }
 
@@ -76,6 +76,10 @@
     border-radius: 100%;
     transition: all 0.2s ease-in;
     z-index: 2;
+
+    path {
+      transition: stroke .2s ease-in-out;
+    }
   }
 
   &:not(:hover) {
@@ -117,10 +121,14 @@
     background-color: $palette-coral;
   }
 
-  border-top: 1px lighten($palette-coral, 20);
+  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-coral, 0.4));
 
   .textContainer {
+    * {
+      color: $white;
+      border-color: $white;
+    }
     @include tile-background-gradient($palette-coral);
   }
 }
@@ -130,7 +138,7 @@
     background-color: $palette-cornsilk;
   }
 
-  border-top: 1px lighten($palette-cornsilk, 20);
+  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-cornsilk, 0.4));
 
   .textContainer {
@@ -143,7 +151,7 @@
     background-color: $palette-gunmetal;
   }
 
-  border-top: 1px lighten($palette-gunmetal, 20);
+  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-gunmetal, 0.4));
 
   .textContainer {
@@ -161,7 +169,7 @@
     background-color: $palette-moonstone;
   }
 
-  border-top: 1px lighten($palette-moonstone, 20);
+  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-moonstone, 0.4));
 
   .textContainer {
@@ -174,7 +182,7 @@
     background-color: $palette-thistle;
   }
 
-  border-top: 1px lighten($palette-thistle, 20);
+  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-thistle, 0.4));
 
   .textContainer {
@@ -187,7 +195,7 @@
     background-color: $palette-green;
   }
 
-  border-top: 1px lighten($palette-green, 20);
+  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-green, 0.4));
 
   .textContainer {
@@ -200,7 +208,7 @@
     background-color: $palette-yellow;
   }
 
-  border-top: 1px lighten($palette-yellow, 20);
+  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-yellow, 0.4));
 
   .textContainer {

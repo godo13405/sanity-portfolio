@@ -2,6 +2,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import localFont from 'next/font/local'
 import Nav from "../component/Nav/Nav"
 import Footer from "../component/Footer/Footer"
+import { VercelToolbar } from "@vercel/toolbar/next";
 
 const GTUltra = localFont({
   src: [
@@ -34,16 +35,16 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const shouldInjectToolbar = process.env.NODE_ENV === "development";
   return (
     <html lang="en" className={GTUltra.className}>
       <body>
         <Nav />
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
         <Footer />
         <SpeedInsights />
+        {shouldInjectToolbar && <VercelToolbar />}
       </body>
     </html>
-  )
+  );
 }

@@ -78,7 +78,12 @@ const Project = async ({ params }) => {
                 <>
                   <div className={style.toolsContainer}>
                     {data.map((tool, k) => (
-                      <img key={k} src={tool.imageUrl} title={tool.name} />
+                      <img
+                        key={k}
+                        src={tool.imageUrl}
+                        title={tool.name}
+                        alt={tool.name}
+                      />
                     ))}
                   </div>
                 </>
@@ -94,7 +99,7 @@ const Project = async ({ params }) => {
             >
               How Research Driven Design can help you focus you efforts
               <small>
-                <img src="/img/bootCamp.jpeg" title="BootCamp" />
+                <img src="/img/bootCamp.jpeg" title="BootCamp" alt="BootCamp" />
                 Published on BootCamp
               </small>
             </a>
@@ -105,7 +110,7 @@ const Project = async ({ params }) => {
             >
               5 things to consider on your UX portfolio
               <small>
-                <img src="/img/bootCamp.jpeg" title="BootCamp" />
+                <img src="/img/bootCamp.jpeg" title="BootCamp" alt="BootCamp" />
                 Published on BootCamp
               </small>
             </a>
@@ -116,7 +121,7 @@ const Project = async ({ params }) => {
             >
               Top 5 UX résumé advice for Juniors I give as a mentor
               <small>
-                <img src="/img/bootCamp.jpeg" title="BootCamp" />
+                <img src="/img/bootCamp.jpeg" title="BootCamp" alt="BootCamp" />
                 Published on BootCamp
               </small>
             </a>
@@ -128,7 +133,11 @@ const Project = async ({ params }) => {
               Learning Cards: organising research findings in an easily
               digestible format
               <small>
-                <img src="/img/UXCollective.jpeg" title="UX Collective" />
+                <img
+                  src="/img/UXCollective.jpeg"
+                  title="UX Collective"
+                  alt="UX Collective"
+                />
                 Published on UX Collective
               </small>
             </a>
@@ -140,7 +149,11 @@ const Project = async ({ params }) => {
               When not to call a Blue a Blue — functional colour names for
               Design Systems
               <small>
-                <img src="/img/UXCollective.jpeg" title="UX Collective" />
+                <img
+                  src="/img/UXCollective.jpeg"
+                  title="UX Collective"
+                  alt="UX Collective"
+                />
                 Published on UX Collective
               </small>
             </a>
@@ -151,7 +164,11 @@ const Project = async ({ params }) => {
             >
               Making your design systems dynamic
               <small>
-                <img src="/img/UXCollective.jpeg" title="UX Collective" />
+                <img
+                  src="/img/UXCollective.jpeg"
+                  title="UX Collective"
+                  alt="UX Collective"
+                />
                 Published on UX Collective
               </small>
             </a>
@@ -186,14 +203,17 @@ const Project = async ({ params }) => {
                 <img
                   src="https://cdn.sanity.io/images/a8hjghpv/production/2b852b8275fd2c98664f58192118df0a604a788e-200x120.svg"
                   title="ADP List"
+                  alt="ADP List"
                 />
                 <img
                   src="https://cdn.sanity.io/images/a8hjghpv/production/8cd53d3f4001156a1c9fa566d3110b9679f06062-200x120.svg"
                   title="UX Academy"
+                  alt="UX Academy"
                 />
                 <img
                   src="https://cdn.sanity.io/images/a8hjghpv/production/04317ec3f568588738552b14a3779fd102cace3e-1200x800.svg"
                   title="Google"
+                  alt="Google"
                 />
               </div>
             </p>
@@ -225,7 +245,11 @@ const Project = async ({ params }) => {
               <div className={style.experienceTitle}>
                 <h3>{d.name}</h3>
                 <div className={style.experienceSubtitle}>
-                  <img src={d.company.imageUrl} title={d.company.name} />
+                  <img
+                    src={d.company.imageUrl}
+                    title={d.company.name}
+                    titaltle={d.company.name}
+                  />
                   <p>
                     {dateTransform(d.startDate)} - {dateTransform(d.endDate)}
                   </p>

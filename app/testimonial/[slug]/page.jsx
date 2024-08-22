@@ -30,8 +30,8 @@ const Project = async ({ params }) => {
       <div className={`section unwhite`}>
         <div className="contained">
           <div className={style.imageContainer}>
-            <img src={data.imageUrl} title={data.name} />
-            <img src={data.company.imageUrl} title={data.company.name} />
+            <img src={data.imageUrl} title={data.name} alt={data.name} />
+            <img src={data.company.imageUrl} title={data.company.name} alt={data.company.name} />
           </div>
 
           <div className={style.headingBlock}>

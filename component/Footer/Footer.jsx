@@ -16,7 +16,7 @@ const Footer = () => {
               Get in Touch
             </a>
             <a href="http://linkedin.com/in/goncaloandrade/" target="_blank">
-              <img src="/img/linkedin.svg" />
+              <img src="/img/linkedin.svg" alt="LinkedIn" />
             </a>
           </div>
         </div>

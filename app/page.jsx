@@ -142,6 +142,7 @@ const Home = () => {
               >
                 <img
                   title="ADPList"
+                  alt="ADPList"
                   src="https://cdn.sanity.io/images/a8hjghpv/production/2b852b8275fd2c98664f58192118df0a604a788e-200x120.svg"
                 />
               </a>
@@ -172,6 +173,7 @@ const Home = () => {
               <a href="https://myuxacademy.com/" target="_blank">
                 <img
                   title="UX Academy"
+                  alt="UX Academy"
                   src="https://cdn.sanity.io/images/a8hjghpv/production/8cd53d3f4001156a1c9fa566d3110b9679f06062-200x120.svg"
                 />
               </a>
@@ -185,7 +187,7 @@ const Home = () => {
                 href="https://adplist.org/mentors/goncalo-andrade"
                 target="_blank"
               >
-                <img title="Medium" src="/img/medium.svg" />
+                <img title="Medium" alt="Medium" src="/img/medium.svg" />
               </a>
             </div>
           </div>
