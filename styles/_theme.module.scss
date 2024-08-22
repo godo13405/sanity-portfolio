@@ -40,14 +40,13 @@ $gap: 2rem;
 }
 
 :export {
-    paletteWhite: $white;
-    paletteBackground: $background;
+    white: $white;
+    background: $background;
     paletteCoral: $palette-coral;
     paletteCornsilk: $palette-cornsilk;
     paletteGunmetal: $palette-gunmetal;
     paletteMoonstone: $palette-moonstone;
     paletteThistle: $palette-thistle;
-
     paletteGreen: $palette-green;
     paletteYellow: $palette-yellow;
 }
