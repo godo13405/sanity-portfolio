@@ -1,8 +1,9 @@
 import style from "./style.module.scss";
-const { default: Link } = require("next/link")
+// const { default: Link } = require("next/link")
 
 const Tag = ({data}) => {
-    return <Link className={`${style.tagContainer} tag`} href={`/tag/${data.slug}`}>{data.name}</Link>
+  //  href={`/tag/${data.slug}`}
+  return <a className={`${style.tagContainer} tag`}>{data.name}</a>;
 }
 
 export default Tag;
