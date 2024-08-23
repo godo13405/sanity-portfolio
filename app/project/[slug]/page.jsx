@@ -6,6 +6,39 @@ import sanityFetch from "../../utils/sanityFetch";
 import { PortableText } from "@portabletext/react";
 import TileGrid from "../../../component/TileGrid/TileGrid";
 import Tag from "../../../component/Tag/Tag";
+import colours from "../../../styles/_theme.module.scss";
+
+export async function generateMetadata({ params, searchParams }, parent) {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const dataArr = await sanityFetch({
+    query: `*[_type == 'project' && slug.current == '${params.slug}'] {
+  "color": colour.label,
+  "imageUrl": image.asset->url,
+  name,
+  summary
+}` });
+  const data = dataArr[0];
+
+  // optionally access and extend (rather than replace) parent metadata
+  // const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: `${data.name} - ${process.env.NEXT_PUBLIC_SITE_TITLE}`,
+    description: `${data.summary}`,
+    openGraph: {
+      images: [
+        `${data.imageUrl}?bg=${colours[
+          `${data.color.charAt(0).toLowerCase()}${data.color
+            .slice(1)
+            .replace(" ", "")}`
+        ].replace("#", "")}`,
+      ],
+    },
+  };
+}
 
 const Project = async ({ params }) => {
   const dataArr = await sanityFetch({
