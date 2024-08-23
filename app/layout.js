@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
   const shouldInjectToolbar = process.env.NODE_ENV === "development";
   return (
     <html lang="en" className={GTUltra.className}>
-      <GoogleAnalytics />
+        <GoogleAnalytics />
       <body>
         <Nav />
         <div>{children}</div>

@@ -10,7 +10,6 @@ import ExperienceTimeline from "../component/ExperienceTimeline/ExperienceTimeli
 import Tag from "../component/Tag/Tag";
 import style from "./style.module.scss";
 import MindBlown from "../component/img/mindBlown";
-import Footer from "../component/Footer/Footer";
 
 const Home = () => {
   return (
