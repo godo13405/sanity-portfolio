@@ -131,3 +131,4 @@ dist
 .vercel
 
 *.css
+yarn.lock

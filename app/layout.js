@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import Nav from "../component/Nav/Nav"
 import Footer from "../component/Footer/Footer"
 import { VercelToolbar } from "@vercel/toolbar/next";
+import GoogleAnalytics from "./utils/GoogleAnalytics";
 
 const GTUltra = localFont({
   src: [
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
   const shouldInjectToolbar = process.env.NODE_ENV === "development";
   return (
     <html lang="en" className={GTUltra.className}>
+      <GoogleAnalytics />
       <body>
         <Nav />
         <div>{children}</div>
