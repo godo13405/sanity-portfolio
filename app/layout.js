@@ -4,6 +4,7 @@ import Nav from "../component/Nav/Nav"
 import Footer from "../component/Footer/Footer"
 import { VercelToolbar } from "@vercel/toolbar/next";
 import GoogleAnalytics from "./utils/GoogleAnalytics";
+import colours from "../styles/_theme.module.scss";
 
 const GTUltra = localFont({
   src: [
@@ -31,8 +32,12 @@ const GTUltra = localFont({
 })
 
 export const metadata = {
+  metadataBase: new URL("https://goncalo.stratfordandrade.com"),
   title: process.env.NEXT_PUBLIC_SITE_TITLE,
   description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION,
+  openGraph: {
+    images: [`/img/me.png?bg=${colours["paletteThistle"].replace("#", "")}`],
+  },
 };
 
 export default function RootLayout({ children }) {
