@@ -12,14 +12,15 @@ export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
   const slug = params.slug;
 
-  // fetch data
+  // fetch data for metadata
   const dataArr = await sanityFetch({
     query: `*[_type == 'project' && slug.current == '${params.slug}'] {
   "color": colour.label,
   "imageUrl": image.asset->url,
   name,
   summary
-}` });
+}`,
+  });
   const data = dataArr[0];
 
   // optionally access and extend (rather than replace) parent metadata
@@ -81,31 +82,43 @@ const Project = async ({ params }) => {
       "slug": slug.current,
       "imageUrl": image.asset->url
     }
-}` });
+}`,
+  });
   const data = dataArr[0];
 
-  return <article className={style.projectContainer}>
-    <div className={`${style.hero} section unwhite`}>
-      <div className="contained">
-        <div className={style.featuredContainer}>
-          <a href={`javascript:navigator.clipboard.writeText('${process.env.NEXT_PUBLIC_URL}/${data.slug}')`} className={style.iconButton}>
-            <img src="/img/share.svg" alt="Share" />
-          </a>
-          <img className={`${style.featuredImage} ${style[data.color.replace(" ", "")]}`} src={data.imageUrl} alt={`${data.name} header image`} />
-          {data.company && <a className={style.companyContainer}><img src={data.company.imageUrl} alt={data.company.name} /></a>}
-        </div>
+  return (
+    <article className={style.projectContainer}>
+      <div className={`${style.hero} section unwhite`}>
+        <div className="contained">
+          <div className={style.featuredContainer}>
+            <img
+              className={`${style.featuredImage} ${
+                style[data.color.replace(" ", "")]
+              }`}
+              src={data.imageUrl}
+              alt={`${data.name} header image`}
+            />
+            {data.company && (
+              <a className={style.companyContainer}>
+                <img src={data.company.imageUrl} alt={data.company.name} />
+              </a>
+            )}
+          </div>
 
-        <h2>{data.name}</h2>
-        {data.tags && data.tags.length && <div className={style.tagsContainer}>{data.tags.map((tag, k) => <Tag key={k} data={tag} />)}</div>}
+          <h2>{data.name}</h2>
+          {data.tags && data.tags.length && (
+            <div className={style.tagsContainer}>
+              {data.tags.map((tag, k) => (
+                <Tag key={k} data={tag} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-    <div className="section">
-      <div className={`${style.projectContainerInner} contained projectText`}>
-        <PortableText
-          value={data.body}
-          components={portableTextImage}
-        />
-      </div>
+      <div className="section">
+        <div className={`${style.projectContainerInner} contained projectText`}>
+          <PortableText value={data.body} components={portableTextImage} />
+        </div>
       </div>
       <div className="section unwhite">
         <div className="contained">
@@ -113,7 +126,8 @@ const Project = async ({ params }) => {
           <TileGrid data={data.relatedProjects} dropCap={false} />
         </div>
       </div>
-  </article >
+    </article>
+  );
 };
 
 export default Project;
