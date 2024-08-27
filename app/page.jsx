@@ -1,15 +1,14 @@
 "use server";
-import TileGrid from "../component/TileGrid/TileGrid";
-import sanityFetch from "./utils/sanityFetch";
 import "../styles/global.scss";
 import Hero from "../component/Hero/Hero";
 import LogoStrip from "../component/LogoStrip/LogoStrip";
 import Link from "next/link";
-import TestimonialTileGrid from "../component/TestimonialTileGrid/TestimonialTileGrid";
-import ExperienceTimeline from "../component/ExperienceTimeline/ExperienceTimeline";
-import Tag from "../component/Tag/Tag";
 import style from "./style.module.scss";
 import MindBlown from "../component/img/mindBlown";
+import Projects from "./_section/Projects";
+import Skills from "./_section/Skills";
+import RecentExperience from "./_section/RecentExperience";
+import Testimonials from "./_section/Testimonials";
 
 const Home = () => {
   return (
@@ -24,76 +23,10 @@ const Home = () => {
             <h2>Projects</h2>
             <p>See some of my best work</p>
           </div>
-          {sanityFetch({
-            query: `*[_type == 'project' && featured == true]|order(date desc){
-  "color": colour.label,
-  "imageUrl": image.asset->url,
-  "slug": slug.current,
-  name,
-  tags[]-> {
-    "name": Name,
-    "slug": Slug.current
-  }
-}[0...5]`,
-          }).then((data) => (
-            <TileGrid data={data} />
-          ))}
+          <Projects />
           <Link href="/project" className="link">
             View all
           </Link>
-        </div>
-      </div>
-      <div className="section">
-        <div className="contained">
-          <div className={style.headingBlock}>
-            <h2>Skills</h2>
-          </div>
-          {sanityFetch({
-            query: `*[_type == 'tag' && skill == true]{
-  "slug": Slug.current,
-  "name": Name
-  }`,
-          }).then((data) => {
-            return (
-              <>
-                <div className={style.skillsContainer}>
-                  <div className={style.skillTags}>
-                    {data.map((tag, k) => (
-                      <Tag key={k} data={tag} />
-                    ))}
-                  </div>
-                  <MindBlown />
-                </div>
-              </>
-            );
-          })}
-        </div>
-      </div>
-      <div className="section unwhite">
-        <div className="contained">
-          <div className={style.headingBlock}>
-            <h2>Recent Experience</h2>
-          </div>
-          {sanityFetch({
-            query: `*[_type == 'experience']|order(startDate desc){
-    name,
-    endDate,
-    startDate,
-  "slug": slug.current,
-  "company": company-> {
-    name,
-    "imageUrl": image.asset->url
-  }
-        }[0...4]`,
-          }).then((data) => (
-            <ExperienceTimeline data={data} />
-          ))}
-          <a
-            href="/cv"
-            className="link"
-          >
-            View my full CV
-          </a>
         </div>
       </div>
       <div className="section">
@@ -105,18 +38,7 @@ const Home = () => {
               working with me
             </p>
           </div>
-          {sanityFetch({
-            query: `*[_type == 'testimonial' && featured == true]|order(date desc) {
-  role,
-    name,
-    linkedin,
-    shortText,
-  "slug": slug.current,
-  "imageUrl": image.asset->url
-        }[0...4]`,
-          }).then((data) => (
-            <TestimonialTileGrid data={data} />
-          ))}
+          <Testimonials />
           <Link href="/testimonial" className="link">
             View all
           </Link>
@@ -133,40 +55,6 @@ const Home = () => {
                 <h3>Teaching</h3>
                 <p>
                   I've taught and mentored hundreads of students over the years
-                </p>
-              </div>
-              <a
-                href="https://adplist.org/mentors/goncalo-andrade"
-                target="_blank"
-              >
-                <img
-                  title="ADPList"
-                  alt="ADPList"
-                  src="https://cdn.sanity.io/images/a8hjghpv/production/2b852b8275fd2c98664f58192118df0a604a788e-200x120.svg"
-                />
-              </a>
-            </div>
-            <div className={style.givingBackContainerInner}>
-              <div>
-                <h3>Mentoring</h3>
-                <p>
-                  I'm part of the Amazing Design People List, you can book a{" "}
-                  <a
-                    className="link"
-                    target="_blank"
-                    href="https://adplist.org/mentors/goncalo-andrade?session=4963-general-mentorship"
-                  >
-                    mentoring session
-                  </a>{" "}
-                  or{" "}
-                  <a
-                    className="link"
-                    target="_blank"
-                    href="https://adplist.org/mentors/goncalo-andrade?session=45743-craft-your-portfolio"
-                  >
-                    porfolio assitance
-                  </a>{" "}
-                  with me
                 </p>
               </div>
               <a href="https://myuxacademy.com/" target="_blank">
@@ -189,7 +77,57 @@ const Home = () => {
                 <img title="Medium" alt="Medium" src="/img/medium.svg" />
               </a>
             </div>
+            <div className={style.givingBackContainerInner}>
+              <div>
+                <h3>Mentoring</h3>
+                <p>
+                  I help other designers, you can book a mentoring session with
+                  me on these platforms
+                </p>
+              </div>
+              <a
+                href="https://adplist.org/mentors/goncalo-andrade"
+                target="_blank"
+              >
+                <img
+                  title="ADPList"
+                  alt="ADPList"
+                  src="https://cdn.sanity.io/images/a8hjghpv/production/2b852b8275fd2c98664f58192118df0a604a788e-200x120.svg"
+                />
+              </a>
+              <a href="https://topmate.io/goncalosandrade" target="_blank">
+                <img
+                  title="TopMate"
+                  alt="TopMate"
+                  src="https://topmate.io/_next/image?url=%2Fimages%2Fcommon%2Ftopmate-light.svg&w=256&q=75"
+                />
+              </a>
+            </div>
           </div>
+        </div>
+      </div>
+      <div className="section">
+        <div className="contained">
+          <div className={style.headingBlock}>
+            <h2>Skills</h2>
+          </div>
+          <div className={style.skillsContainer}>
+            <div className={style.skillTags}>
+              <Skills />
+            </div>
+            <MindBlown />
+          </div>
+        </div>
+      </div>
+      <div className="section unwhite">
+        <div className="contained">
+          <div className={style.headingBlock}>
+            <h2>Recent Experience</h2>
+          </div>
+          <RecentExperience />
+          <a href="/cv" className="link">
+            View my full CV
+          </a>
         </div>
       </div>
     </main>

@@ -62,10 +62,20 @@
     flex-direction: column;
     min-width: 300px;
     justify-content: space-between;
+    &:not(:last-child) {
+      a {
+        flex: 2;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     img {
       width: 10rem;
-      height: 6rem;
       object-fit: contain;
     }
   }

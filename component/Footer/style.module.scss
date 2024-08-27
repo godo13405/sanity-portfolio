@@ -13,11 +13,15 @@
     flex-direction: row;
     justify-content: space-between;
 
+    @media all and (max-width: $width-med) {
+      flex-direction: column;
+    }
+
     > * {
-        display: flex;
-        flex-direction: row;
-        gap: $gap;
-        align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: $gap;
+      align-items: center;
     }
   }
 }

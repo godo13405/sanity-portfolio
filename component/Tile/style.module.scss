@@ -20,7 +20,7 @@
     animation: 0.4s ease-out forwards animateIn;
   }
 
-  height: 15em;
+  height: 20em;
 
   i {
     position: absolute;
@@ -78,7 +78,7 @@
     z-index: 2;
 
     path {
-      transition: stroke .2s ease-in-out;
+      transition: stroke 0.2s ease-in-out;
     }
   }
 
@@ -121,7 +121,6 @@
     background-color: $palette-coral;
   }
 
-  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-coral, 0.4));
 
   .textContainer {
@@ -138,7 +137,6 @@
     background-color: $palette-cornsilk;
   }
 
-  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-cornsilk, 0.4));
 
   .textContainer {
@@ -151,7 +149,6 @@
     background-color: $palette-gunmetal;
   }
 
-  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-gunmetal, 0.4));
 
   .textContainer {
@@ -169,7 +166,6 @@
     background-color: $palette-moonstone;
   }
 
-  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-moonstone, 0.4));
 
   .textContainer {
@@ -182,7 +178,6 @@
     background-color: $palette-thistle;
   }
 
-  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-thistle, 0.4));
 
   .textContainer {
@@ -195,7 +190,6 @@
     background-color: $palette-green;
   }
 
-  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-green, 0.4));
 
   .textContainer {
@@ -208,7 +202,6 @@
     background-color: $palette-yellow;
   }
 
-  
   filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-yellow, 0.4));
 
   .textContainer {
