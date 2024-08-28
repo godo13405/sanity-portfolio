@@ -135,3 +135,11 @@
     }
   }
 }
+
+.IconButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  filter: drop-shadow(-0.2em 0.4em 0.4em rgba($palette-gunmetal, 0.4));
+}

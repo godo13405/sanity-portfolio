@@ -1,11 +1,12 @@
 @import "../../styles/vars";
 
 .iconButton {
-    display: block;
-    width: $icon-button-size;
-    height: $icon-button-size;
-    border-radius: 100%;
-    background-color: $palette-coral;
-    background-position: center;
-    background-repeat: no-repeat;
+  display: block;
+  width: $icon-button-size;
+  height: $icon-button-size;
+  border-radius: 100%;
+  background-color: $palette-coral;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
 }

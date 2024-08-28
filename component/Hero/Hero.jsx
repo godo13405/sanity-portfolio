@@ -33,12 +33,7 @@ const Hero = () => {
             className={style.picture}
             style={{ backgroundImage: "url(/img/me.png)" }}
           />
-          <IconButton
-            className={style.IconButton}
-            href="/cv"
-            img="cv.svg"
-            newTab={true}
-          />
+          <IconButton className={style.IconButton} href="/cv" img="cv.svg" />
           <div className={style.iconButtonGroup}>
             <IconButton
               href="http://linkedin.com/in/goncaloandrade/"

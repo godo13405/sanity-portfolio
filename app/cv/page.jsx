@@ -6,6 +6,7 @@ import sanityFetch from "../utils/sanityFetch";
 import { PortableText } from "@portabletext/react";
 import Face from "../../component/img/face";
 import dateTransform from "../utils/dateTransform";
+import IconButton from "../../component/IconButton/IconButton";
 
 const Project = async ({ params }) => {
   const dataArr = await sanityFetch({
@@ -35,6 +36,12 @@ const Project = async ({ params }) => {
 
   return (
     <main className="section unwhite">
+      <IconButton
+        className={style.IconButton}
+        href="/cv.pdf"
+        img="download.svg"
+        newTab={true}
+      />
       <div className={`contained ${style.outerContainer}`}>
         <div className={style.secondaryContainer}>
           <div className={style.intro}>
