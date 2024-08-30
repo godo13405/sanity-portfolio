@@ -5,6 +5,7 @@ import Footer from "../component/Footer/Footer";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import colours from "../styles/_theme.module.scss";
+import HotjarSnippet from "./utils/HotjarSnippet";
 
 const GTUltra = localFont({
   src: [
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <SpeedInsights />
         {shouldInjectToolbar && <VercelToolbar />}
+        <HotjarSnippet />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
     </html>

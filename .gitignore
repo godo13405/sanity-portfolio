@@ -132,3 +132,6 @@ dist
 
 *.css
 yarn.lock
+-sanity/yarn.lock
+-sanity/node_modules
+-sanity/.next
