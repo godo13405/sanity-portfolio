@@ -1,0 +1,14 @@
+@import "../../../styles/vars";
+
+.TileGridContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $gap;
+
+  > * {
+    @media all and (min-width: $width-med) {
+      width: calc((100% - $gap) / 2);
+    }
+  }
+}

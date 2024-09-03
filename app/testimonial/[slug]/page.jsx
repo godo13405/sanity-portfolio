@@ -3,7 +3,7 @@ import "../../../styles/global.scss";
 import style from "./style.module.scss";
 import sanityFetch from "../../utils/sanityFetch";
 import { PortableText } from "@portabletext/react";
-import TestimonialTileGrid from "../../../component/TestimonialTileGrid/TestimonialTileGrid";
+import TestimonialTileGrid from "../../component/TestimonialTileGrid/TestimonialTileGrid";
 import shuffleArray from "../../utils/shuffleArray";
 import Link from "next/link";
 
@@ -31,7 +31,11 @@ const Project = async ({ params }) => {
         <div className="contained">
           <div className={style.imageContainer}>
             <img src={data.imageUrl} title={data.name} alt={data.name} />
-            <img src={data.company.imageUrl} title={data.company.name} alt={data.company.name} />
+            <img
+              src={data.company.imageUrl}
+              title={data.company.name}
+              alt={data.company.name}
+            />
           </div>
 
           <div className={style.headingBlock}>

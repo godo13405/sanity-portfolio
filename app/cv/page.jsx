@@ -4,9 +4,9 @@ import "../../styles/global.scss";
 import style from "./style.module.scss";
 import sanityFetch from "../utils/sanityFetch";
 import { PortableText } from "@portabletext/react";
-import Face from "../../component/img/face";
+import Face from "../component/img/face";
 import dateTransform from "../utils/dateTransform";
-import IconButton from "../../component/IconButton/IconButton";
+import IconButton from "../component/IconButton/IconButton";
 
 const Project = async ({ params }) => {
   const dataArr = await sanityFetch({

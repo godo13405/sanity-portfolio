@@ -1,0 +1,28 @@
+@import "../../../styles/vars";
+
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+  position: relative;
+  z-index: 2;
+  max-width: 50rem;
+  margin: $gap auto;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 4rem;
+    bottom: 4rem;
+    left: 0;
+    width: 50%;
+    border-right: 0.4em solid rgba($white, 0.6);
+    z-index: -1;
+  }
+
+  > * {
+    &:nth-child(even) {
+      align-self: end;
+    }
+  }
+}

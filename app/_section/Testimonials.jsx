@@ -1,5 +1,5 @@
 "use server";
-import TestimonialTileGrid from "../../component/TestimonialTileGrid/TestimonialTileGrid";
+import TestimonialTileGrid from "../component/TestimonialTileGrid/TestimonialTileGrid";
 import sanityFetch from "../utils/sanityFetch";
 
 const Testimonials = async () => {

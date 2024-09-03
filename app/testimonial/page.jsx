@@ -1,6 +1,6 @@
 "use server";
 
-import TestimonialTileGrid from "../../component/TestimonialTileGrid/TestimonialTileGrid";
+import TestimonialTileGrid from "../component/TestimonialTileGrid/TestimonialTileGrid";
 import "../../styles/global.scss";
 import sanityFetch from "../utils/sanityFetch";
 
@@ -13,16 +13,19 @@ const Project = async ({ params }) => {
     shortText,
   "slug": slug.current,
   "imageUrl": image.asset->url
-        }` });
+        }`,
+  });
 
-  return <main className={`section unwhite`}>
-    <div className="contained">
-      <div>
-        <h1>Testimonials</h1>
-        <TestimonialTileGrid data={data} isWhite={true} />
+  return (
+    <main className={`section unwhite`}>
+      <div className="contained">
+        <div>
+          <h1>Testimonials</h1>
+          <TestimonialTileGrid data={data} isWhite={true} />
         </div>
-    </div>
-  </main>
+      </div>
+    </main>
+  );
 };
 
 export default Project;

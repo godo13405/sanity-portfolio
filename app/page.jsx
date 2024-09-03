@@ -1,10 +1,10 @@
 "use server";
 import "../styles/global.scss";
-import Hero from "../component/Hero/Hero";
-import LogoStrip from "../component/LogoStrip/LogoStrip";
+import Hero from "./component/Hero/Hero";
+import LogoStrip from "./component/LogoStrip/LogoStrip";
 import Link from "next/link";
 import style from "./style.module.scss";
-import MindBlown from "../component/img/mindBlown";
+import MindBlown from "./component/img/mindBlown";
 import Projects from "./_section/Projects";
 import Skills from "./_section/Skills";
 import RecentExperience from "./_section/RecentExperience";

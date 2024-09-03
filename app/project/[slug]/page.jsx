@@ -4,8 +4,8 @@ import "../../../styles/global.scss";
 import portableTextImage from "../../utils/portableText/portableTextImage";
 import sanityFetch from "../../utils/sanityFetch";
 import { PortableText } from "@portabletext/react";
-import TileGrid from "../../../component/TileGrid/TileGrid";
-import Tag from "../../../component/Tag/Tag";
+import TileGrid from "../../component/TileGrid/TileGrid";
+import Tag from "../../component/Tag/Tag";
 import colours from "../../../styles/_theme.module.scss";
 
 export async function generateMetadata({ params, searchParams }, parent) {

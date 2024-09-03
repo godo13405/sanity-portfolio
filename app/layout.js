@@ -1,7 +1,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
-import Nav from "../component/Nav/Nav";
-import Footer from "../component/Footer/Footer";
+import Nav from "./component/Nav/Nav";
+import Footer from "./component/Footer/Footer";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import colours from "../styles/_theme.module.scss";

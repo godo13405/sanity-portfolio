@@ -1,0 +1,29 @@
+@import "../../../styles/vars";
+
+.TileGridContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $gap;
+  padding: $gap;
+  justify-content: center;
+  > * {
+    width: 100%;
+  }
+
+  @media all and (min-width: $width-max) {
+    padding: $gap 0;
+  }
+  @media all and (min-width: $width-med) {
+    > * {
+      width: calc((100% - ($gap * 2)) / 3);
+    }
+
+    &.dropCap {
+      > :first-child {
+        width: calc(((100% - ($gap * 2)) / 3) * 2 + $gap);
+      }
+    }
+  }
+}

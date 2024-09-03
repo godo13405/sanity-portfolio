@@ -1,5 +1,5 @@
 "use server";
-import Tag from "../../component/Tag/Tag";
+import Tag from "../component/Tag/Tag";
 import sanityFetch from "../utils/sanityFetch";
 
 const Skills = async () => {

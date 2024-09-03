@@ -1,0 +1,73 @@
+@import "../../../styles/vars";
+
+.testimonialContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: $palette-cornsilk;
+  @include tile-shadow(false);
+
+  &.white {
+    background-color: $white;
+  }
+
+  border-radius: $corner-radius;
+  padding: $gap/2;
+  text-decoration: none;
+  color: $palette-gunmetal;
+
+  opacity: 0;
+  transform: translateY(4em);
+
+  &.inView {
+    animation: 0.4s ease-out forwards animateIn;
+  }
+
+  > img {
+    width: 3rem;
+    opacity: 0.4;
+
+    &:last-child {
+      transform: scaleX(-1);
+    }
+  }
+
+  .contentContainer {
+    flex: 1;
+  }
+
+  .cardHeading {
+    display: flex;
+    flex-direction: row;
+    gap: $gap/2;
+    justify-content: center;
+
+    img {
+      border-radius: 100%;
+      width: $corner-radius;
+      height: $corner-radius;
+    }
+
+    .identity {
+      display: flex;
+      flex-direction: column;
+
+      * {
+        text-align: left;
+        margin: 0;
+        padding: 0;
+      }
+
+      label {
+        opacity: 0.6;
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+@keyframes animateIn {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

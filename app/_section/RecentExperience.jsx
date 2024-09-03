@@ -1,5 +1,5 @@
 "use server";
-import ExperienceTimeline from "../../component/ExperienceTimeline/ExperienceTimeline";
+import ExperienceTimeline from "../component/ExperienceTimeline/ExperienceTimeline";
 import sanityFetch from "../utils/sanityFetch";
 
 const RecentExperience = async () => {
