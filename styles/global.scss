@@ -28,7 +28,7 @@ body {
   background-color: $palette-cornsilk;
   background-size: 80px;
 
-  background: url('/pattern/azulejos.svg') center space repeat $palette-cornsilk;
+  background: url("/pattern/azulejos.svg") center space repeat $palette-cornsilk;
   background-size: 100px;
 }
 
@@ -92,7 +92,7 @@ img {
 
 .section {
   width: 100%;
-  padding: clamp($corner-radius, 15vmin, $corner-radius*2.6) 1em;
+  padding: clamp($corner-radius, 15vmin, $corner-radius * 2.6) 1em;
   &.fit {
     padding: $corner-radius 1em;
   }
@@ -175,5 +175,15 @@ img {
 .print-only {
   @media screen {
     display: none;
+  }
+}
+
+.loadingContainer {
+  width: 100%;
+  margin: 4rem 0;
+  fill: $palette-cornsilk;
+
+  .unwhite & {
+    fill: $white;
   }
 }

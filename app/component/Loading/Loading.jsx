@@ -1,5 +1,3 @@
-import style from "./Loading.module.scss";
-
 const Loading = () => {
   return (
     <svg
@@ -7,7 +5,7 @@ const Loading = () => {
       width="105"
       height="105"
       viewBox="0 0 105 105"
-      className={style.svgContainer}
+      className="loadingContainer"
     >
       <circle cx="12.5" cy="12.5" r="12.5">
         <animate

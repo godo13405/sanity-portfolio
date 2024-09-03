@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import TileGrid from "../component/TileGrid/TileGrid";
 import sanityFetch from "../utils/sanityFetch";
+import Loading from "../component/Loading/Loading";
 
 const Projects = () => {
   const [data, setData] = useState();
@@ -22,7 +23,7 @@ const Projects = () => {
       }).then((d) => setData(d));
     }
   }, [data]);
-  if (!data) return;
+  if (!data) return <Loading />;
   return <TileGrid data={data} />;
 };
 
