@@ -38,9 +38,8 @@ const Project = async ({ params }) => {
     <main className="section unwhite">
       <IconButton
         className={style.IconButton}
-        href="/file/cv.pdf"
+        href="/file/cv"
         img="download.svg"
-        locale={false}
         newTab={true}
       />
       <div className={`contained ${style.outerContainer}`}>

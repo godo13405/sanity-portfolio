@@ -3,8 +3,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/cv",
-        destination: "/cv.pdf",
+        source: "/file/cv",
+        destination: process.env.NEXT_PUBLIC_CV_LINK,
       },
     ];
   },
@@ -13,4 +13,3 @@ const nextConfig = {
 const withVercelToolbar = require("@vercel/toolbar/plugins/next")();
 
 module.exports = withVercelToolbar(nextConfig);
-
