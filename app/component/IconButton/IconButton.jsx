@@ -5,12 +5,14 @@ const IconButton = ({
   href = "/",
   newTab = false,
   img = "face.svg",
+  locale = true,
 }) => {
   return (
     <a
       className={`${className} ${style.iconButton} ${style.iconButtonCta}`}
       href={href}
       target={newTab ? "_blank" : ""}
+      locale={locale}
       style={{
         backgroundImage: `url(/img/${img})`,
       }}
