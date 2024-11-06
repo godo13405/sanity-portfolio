@@ -3,7 +3,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/file/cv",
+        source: "/cv",
         destination: process.env.NEXT_PUBLIC_CV_LINK,
       },
     ];
