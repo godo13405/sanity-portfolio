@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
-    return [
-      {
-        source: "/cv",
-        destination: process.env.NEXT_PUBLIC_CV_LINK,
-      },
-    ];
+    return {
+      beforeFiles: [
+        {
+          source: "/cv",
+          destination: process.env.NEXT_PUBLIC_CV_LINK,
+        },
+      ],
+    };
   },
 };
 
