@@ -172,6 +172,19 @@ img {
   }
 }
 
+.CTA {
+  $size: 2.4em;
+  display: inline-block;
+  clear: both;
+  padding: 0.6em 1em;
+  height: $size;
+  color: #fff;
+  border-radius: $size / 2;
+  background-color: $palette-coral;
+  text-decoration: none;
+  text-align: center;
+}
+
 .print-only {
   @media screen {
     display: none;
