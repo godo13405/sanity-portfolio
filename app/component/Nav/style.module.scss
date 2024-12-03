@@ -2,18 +2,22 @@
 
 .navContainer {
   height: $nav-size;
-  background-color: rgba($white, 0.2);
+  background-color: rgba($white, 0.4);
   backdrop-filter: blur(1rem);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   z-index: 10;
 
-  @media screen {
-    + * {
-      padding-top: 3rem;
+  .navContainerInner {
+    width: 100%;
+    max-width: $width-max;
+    margin: 0 auto;
+
+    > * {
+      padding: 0 1em;
     }
   }
 
@@ -43,6 +47,8 @@
     flex-direction: row;
     gap: 1em;
     align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
 
     a {
       font-weight: 600;
