@@ -50,6 +50,8 @@ export default function RootLayout({ children }) {
   const shouldInjectToolbar = process.env.NODE_ENV === "development";
   return (
     <html lang="en" className={GTUltra.className}>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTAGS_MEASUREMENT_ID} />
       <body>
         <Nav />
         <div>{children}</div>
@@ -58,8 +60,6 @@ export default function RootLayout({ children }) {
         {shouldInjectToolbar && <VercelToolbar />}
         <HotjarSnippet />
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTAGS_MEASUREMENT_ID} />
     </html>
   );
 }
