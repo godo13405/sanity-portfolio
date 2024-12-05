@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import Nav from "./component/Nav/Nav";
 import Footer from "./component/Footer/Footer";
 import { VercelToolbar } from "@vercel/toolbar/next";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 import colours from "../styles/_theme.module.scss";
 import HotjarSnippet from "./utils/HotjarSnippet";
 
@@ -59,6 +59,7 @@ export default function RootLayout({ children }) {
         <HotjarSnippet />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTAGS_MEASUREMENT_ID} />
     </html>
   );
 }
