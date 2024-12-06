@@ -200,3 +200,21 @@ img {
     fill: $white;
   }
 }
+
+@media all and (max-width: $width-sml) {
+  .hideOnMobile {
+    display: none !important;
+  }
+  .showOnMobile {
+    display: inherit;
+  }
+}
+
+@media all and (min-width: $width-sml) {
+  .hideOnMobile {
+    display: inherit;
+  }
+  .showOnMobile {
+    display: none !important;
+  }
+}

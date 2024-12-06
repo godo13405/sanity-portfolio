@@ -5,7 +5,11 @@ const nextConfig = {
       beforeFiles: [
         {
           source: "/cv",
-          destination: process.env.NEXT_PUBLIC_CV_LINK,
+          destination: "/cv.pdf",
+        },
+        {
+          source: "/cv/doc",
+          destination: "/cv.docx",
         },
       ],
     };

@@ -2,22 +2,31 @@
 
 .navContainer {
   height: $nav-size;
+  transition: height 0.2s ease-in;
   background-color: rgba($white, 0.4);
+  @media all and (max-width: $width-sml) {
+    &.openMenu {
+      height: 100vh;
+      background-color: rgba($white, 0.6);
+    }
+  }
   backdrop-filter: blur(1rem);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   z-index: 10;
 
   .navContainerInner {
     width: 100%;
     max-width: $width-max;
     margin: 0 auto;
-
-    > * {
-      padding: 0 1em;
+    > a {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -25,13 +34,9 @@
     display: none;
   }
 
-  > * {
-    filter: drop-shadow(0 0.2em 0.4em rgba($white, 0.8));
-  }
-
   > div {
     width: 100%;
-    height: 100%;
+    height: $nav-size;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -40,26 +45,65 @@
   img {
     width: 2rem;
     height: 2rem;
+    margin: 0 0.5em;
+  }
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+
+  @media all and (max-width: $width-sml) {
+    flex-direction: column;
+    position: absolute;
+    top: $nav-size;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+
+    > * {
+      width: 100%;
+    }
+
+    .openMenu & {
+      opacity: 1;
+    }
   }
 
-  .links {
+  a {
+    font-weight: 600;
+    text-decoration: none;
+    color: $palette-gunmetal;
+    height: $nav-size;
+    line-height: $nav-size;
+    transition: color 0.8s ease-in-out;
+    padding: 0 0.5em;
+
+    &:hover {
+      color: $palette-coral;
+      transition: color 0.2s ease-in-out;
+    }
+  }
+
+  .subLinks {
     display: flex;
-    flex-direction: row;
-    gap: 1em;
-    align-items: center;
+    flex-direction: column;
+    max-height: $nav-size;
+    height: 100vh;
     overflow-y: hidden;
-    overflow-x: auto;
+    transition: height 0.2s ease-in;
 
-    a {
-      font-weight: 600;
-      text-decoration: none;
-      color: $palette-gunmetal;
-      transition: color 0.8s ease-in-out;
+    &:hover {
+      max-height: $nav-size * 3;
+    }
 
-      &:hover {
-        color: $palette-coral;
-        transition: color 0.2s ease-in-out;
+    > *:not(:first-child) {
+      @media all and (min-width: $width-sml) {
+        background-color: rgba($white, 0.4);
+        backdrop-filter: blur(1rem);
       }
+      opacity: 0.8;
     }
   }
 }
