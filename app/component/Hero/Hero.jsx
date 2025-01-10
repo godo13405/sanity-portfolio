@@ -35,7 +35,7 @@ const Hero = () => {
           />
           <IconButton
             className={style.IconButton}
-            href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1ylnCcmXUsE-8e804Bht5DXu4rTvYdsy2/export?format=pdf"
+            href="https://docs.google.com/document/d/1ylnCcmXUsE-8e804Bht5DXu4rTvYdsy2/export?format=pdf"
             img="cv.svg"
           />
           <div className={style.iconButtonGroup}>

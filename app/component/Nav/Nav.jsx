@@ -28,13 +28,13 @@ const Nav = () => {
           <div className={style.subLinks}>
             <a>CV ⌄</a>
             <Link
-              href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1ylnCcmXUsE-8e804Bht5DXu4rTvYdsy2/export?format=pdf"
+              href="https://docs.google.com/document/d/1ylnCcmXUsE-8e804Bht5DXu4rTvYdsy2/export?format=pdf"
               target="_blank"
             >
               PDF
             </Link>
             <Link
-              href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1ylnCcmXUsE-8e804Bht5DXu4rTvYdsy2/export?format=docx"
+              href="https://docs.google.com/document/d/1ylnCcmXUsE-8e804Bht5DXu4rTvYdsy2/export?format=docx"
               target="_blank"
             >
               Word
