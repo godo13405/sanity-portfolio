@@ -19,11 +19,11 @@ const GTUltra = localFont({
       weight: "700",
       style: "normal",
     },
-    {
-      path: "../public/font/GT-Ultra-Standard-Bold-Trial.woff2",
-      weight: "400",
-      style: "normal",
-    },
+    // {
+    //   path: "../public/font/GT-Ultra-Standard-Bold-Trial.woff2",
+    //   weight: "400",
+    //   style: "normal",
+    // },
     {
       path: "../public/font/GT-Ultra-Standard-Regular-Trial.woff2",
       weight: "400",

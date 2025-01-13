@@ -47,6 +47,10 @@ const Project = async ({ params }) => {
   "color": colour.label,
   "imageUrl": image.asset->url,
   "slug": slug.current,
+  "date": {
+    "start": dateTime(startDate + 'T00:00:00Z'),
+    "end": dateTime(endDate + 'T00:00:00Z'),
+  },
   tools[]->{
     Name,
     "Slug": Slug.current,
@@ -67,6 +71,8 @@ const Project = async ({ params }) => {
     }
   },
   name,
+  summary,
+  role,
   "body": Body[]{
     ...,
     "asset": asset->{
@@ -85,39 +91,74 @@ const Project = async ({ params }) => {
 }`,
   });
   const data = dataArr[0];
+  data.date.start = new Date(data.date.start).toLocaleDateString("en-gb", {
+    month: "short",
+    year: "numeric",
+  });
+  data.date.end = new Date(data.date.end).toLocaleDateString("en-gb", {
+    month: "short",
+    year: "numeric",
+  });
 
   return (
     <article className={style.projectContainer}>
-      <div className={`${style.hero} section unwhite`}>
-        <div className="contained">
-          <div className={style.featuredContainer}>
-            <img
-              className={`${style.featuredImage} ${
-                style[data.color.replace(" ", "")]
-              }`}
-              src={data.imageUrl}
-              alt={`${data.name} header image`}
-            />
-            {data.company && (
-              <a className={style.companyContainer}>
-                <img src={data.company.imageUrl} alt={data.company.name} />
-              </a>
-            )}
-          </div>
-
-          <h2>{data.name}</h2>
-          {data.tags && data.tags.length && (
-            <div className={style.tagsContainer}>
-              {data.tags.map((tag, k) => (
-                <Tag key={k} data={tag} />
-              ))}
+      <div className={`section unwhite`}>
+        <div className={style.page}>
+          <div className={style.hero}>
+            <div className={style.featuredContainer}>
+              <img
+                className={`${style.featuredImage} ${
+                  style[data.color.replace(" ", "")]
+                }`}
+                src={data.imageUrl}
+                alt={`${data.name} header image`}
+              />
             </div>
-          )}
-        </div>
-      </div>
-      <div className="section">
-        <div className={`${style.projectContainerInner} contained projectText`}>
-          <PortableText value={data.body} components={portableTextImage} />
+          </div>
+          <div
+            className={`${style.projectContainerInner} contained projectText`}
+          >
+            <h2>{data.name}</h2>
+            <div className={style.metaContainer}>
+              {data.tags && data.tags.length && (
+                <div className={style.tagsContainer}>
+                  {data.tags.map((tag, k) => (
+                    <Tag key={k} data={tag} />
+                  ))}
+                </div>
+              )}
+              <p>{data.summary}</p>
+              <div className={style.metaContainerInner}>
+                {data.company && (
+                  <p>
+                    <label>Company</label>
+                    <img
+                      src={data.company.imageUrl}
+                      title={data.company.name}
+                    />
+                  </p>
+                )}
+                {data.role && (
+                  <p>
+                    <label>Role</label>
+                    <span>{data.role}</span>
+                  </p>
+                )}
+                {data.date && (
+                  <p>
+                    <label>Duration</label>
+                    <span>
+                      {data.date.start}
+                      {data.date.start != data.date.end
+                        ? `- ${data.date.end}`
+                        : null}
+                    </span>
+                  </p>
+                )}
+              </div>
+            </div>
+            <PortableText value={data.body} components={portableTextImage} />
+          </div>
         </div>
       </div>
       <div className="section unwhite">

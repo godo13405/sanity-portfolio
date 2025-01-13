@@ -125,8 +125,11 @@ const Home = () => {
             <h2>Recent Experience</h2>
           </div>
           <RecentExperience />
-          <a href="/cv" className="link">
-            View my full CV
+          <a
+            href="https://docs.google.com/document/d/1ylnCcmXUsE-8e804Bht5DXu4rTvYdsy2/export?format=pdf"
+            className="link"
+          >
+            Get my full CV
           </a>
         </div>
       </div>
