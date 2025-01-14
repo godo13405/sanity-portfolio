@@ -127,7 +127,7 @@ const Project = async ({ params }) => {
                   ))}
                 </div>
               )}
-              <p>{data.summary}</p>
+              {data.intro && <p>{data.intro}</p>}
               <div className={style.metaContainerInner}>
                 {data.company && (
                   <p>
