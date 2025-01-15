@@ -72,6 +72,7 @@ const Project = async ({ params }) => {
   },
   name,
   summary,
+  intro,
   role,
   "body": Body[]{
     ...,
