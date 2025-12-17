@@ -16,6 +16,7 @@ const portableTextImage = {
               }`}
               src={`${value.asset.url}?w=800&fit=max&auto=format`}
               alt={value.asset.altText}
+              title={value.asset.title || value.asset.altText}
             />
             {value.asset.title && <caption>{value.asset.title}</caption>}
           </figure>
